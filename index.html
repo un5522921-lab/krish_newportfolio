@@ -1,0 +1,1814 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light" />
+<title>Krrish Kishore — AI Automation Engineer | n8n Developer | AI Agent Builder</title>
+<meta name="description" content="Krrish Kishore is an AI Automation Engineer in Karachi, Pakistan, building AI-powered workflows, intelligent agents and business automation systems with n8n, LLMs, APIs and modern databases." />
+<meta property="og:title" content="Krrish Kishore — AI Automation Engineer" />
+<meta property="og:description" content="I build intelligent automations that turn repetitive work into results — AI agents, customer support, lead management and business workflows." />
+<meta property="og:type" content="website" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23065F46'/%3E%3Ccircle cx='20' cy='20' r='6' fill='%2310B981'/%3E%3Ccircle cx='44' cy='20' r='6' fill='%23fff'/%3E%3Ccircle cx='32' cy='44' r='6' fill='%2310B981'/%3E%3Cpath d='M25 23 29 38M39 23 35 38M26 20h12' stroke='%23fff' stroke-width='3'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
+<style>
+:root{
+  --bg:#ffffff; --ink:#111827; --muted:#4b5563; --faint:#6b7280;
+  --line:#e5e7eb; --line2:#eef2f7; --surface:#f8fafc; --surface2:#f1f5f9;
+  --emerald:#10b981; --emerald-dark:#059669; --forest:#065f46; --forest2:#064e3b;
+  --dark:#0b1a13; --dark2:#10251c; --amber:#92400e; --amber-bg:#fffbeb; --amber-line:#fde68a;
+  --radius:14px; --radius-sm:10px;
+  --shadow:0 1px 2px rgba(17,24,39,.05),0 8px 24px rgba(17,24,39,.06);
+  --shadow-lg:0 2px 4px rgba(17,24,39,.05),0 20px 48px rgba(17,24,39,.10);
+  --max:1160px;
+  --ease:cubic-bezier(.22,.9,.28,1); --ease-soft:cubic-bezier(.33,.8,.35,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{overflow-x:clip}
+main{overflow-x:clip}
+body{margin:0;font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%}
+a{color:var(--forest);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{outline:3px solid rgba(16,185,129,.45);outline-offset:2px;border-radius:6px}
+h1,h2,h3,h4{line-height:1.15;margin:0;color:var(--ink);letter-spacing:-.02em}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+button{font:inherit;cursor:pointer}
+.container{max-width:var(--max);margin:0 auto;padding:0 24px}
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace}
+
+/* ---------- Header ---------- */
+header.site{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:68px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink)}
+.brand-mark{width:38px;height:38px;flex:0 0 auto}
+.brand-name{font-weight:800;font-size:17px;letter-spacing:-.02em;line-height:1.1}
+.brand-role{display:block;font-size:11.5px;font-weight:600;color:var(--faint);letter-spacing:.04em;text-transform:uppercase}
+.nav-links{display:flex;gap:4px;align-items:center}
+.nav-links a{text-decoration:none;color:var(--muted);font-weight:600;font-size:14.5px;padding:8px 12px;border-radius:8px}
+.nav-links a:hover{color:var(--ink);background:var(--surface)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:10px;font-weight:700;font-size:14.5px;padding:12px 20px;text-decoration:none;border:1px solid transparent;transition:background .18s,transform .18s,box-shadow .18s,border-color .18s}
+.btn-primary{background:var(--emerald);color:#fff;box-shadow:0 6px 18px rgba(16,185,129,.28)}
+.btn-primary:hover{background:var(--emerald-dark)}
+.btn-outline{background:#fff;color:var(--ink);border-color:#d1d5db}
+.btn-outline:hover{border-color:var(--forest);color:var(--forest)}
+.btn-dark{background:var(--forest);color:#fff}
+.btn-dark:hover{background:var(--forest2)}
+.btn-sm{padding:9px 14px;font-size:13.5px}
+.btn-ghost{background:transparent;color:#d1fae5;border-color:rgba(255,255,255,.25)}
+.btn-ghost:hover{border-color:#fff;color:#fff}
+.nav-cta{margin-left:8px}
+.menu-btn{display:none;background:#fff;border:1px solid var(--line);border-radius:10px;width:44px;height:44px;align-items:center;justify-content:center}
+.menu-btn svg{width:22px;height:22px}
+.mobile-menu{display:none;border-top:1px solid var(--line);padding:12px 24px 18px;background:#fff}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:block;text-decoration:none;color:var(--ink);font-weight:600;padding:11px 4px;border-bottom:1px solid var(--line2)}
+.mobile-menu .btn{width:100%;margin-top:14px}
+
+/* ---------- Sections ---------- */
+section{padding:92px 0}
+.section-head{max-width:720px;margin:0 0 40px}
+.kicker{font-size:12.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--emerald-dark);margin-bottom:14px}
+.kicker::before{content:"";display:inline-block;width:26px;height:2px;background:var(--emerald);vertical-align:middle;margin-right:9px}
+.section-head h2{font-size:clamp(30px,4vw,42px);font-weight:800}
+.section-head p{color:var(--muted);font-size:17px;margin-top:14px}
+.section-head.center{margin-left:auto;margin-right:auto;text-align:center}
+.section-head.center .kicker::before{display:none}
+.alt{background:var(--surface)}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .55s ease,transform .55s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- Hero ---------- */
+.hero{padding:72px 0 84px;background:radial-gradient(720px 340px at 82% 8%,rgba(16,185,129,.10),transparent 65%),radial-gradient(560px 300px at 8% 92%,rgba(6,95,70,.06),transparent 60%),#fff}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:56px;align-items:center}
+.eyebrow{font-size:12.5px;font-weight:800;letter-spacing:.15em;color:var(--forest);text-transform:uppercase;margin-bottom:20px}
+.hero h1{font-size:clamp(38px,5.2vw,58px);font-weight:800;line-height:1.06}
+.hero h1 .accent{color:var(--emerald-dark);position:relative;white-space:nowrap}
+.hero-sub{color:var(--muted);font-size:18px;margin-top:20px;max-width:540px}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:26px;align-items:center;font-size:14px;color:var(--muted)}
+.avail{display:inline-flex;align-items:center;gap:8px;background:var(--amber-bg);border:1px solid var(--amber-line);color:var(--amber);font-weight:700;font-size:13px;padding:7px 12px;border-radius:999px}
+.avail i{width:8px;height:8px;border-radius:50%;background:#f59e0b;flex:0 0 auto}
+.loc{display:inline-flex;align-items:center;gap:7px;font-weight:600;color:var(--ink)}
+.loc svg{width:16px;height:16px;color:var(--emerald-dark)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.chip{background:#ecfdf5;border:1px solid #a7f3d0;color:var(--forest);font-weight:600;font-size:13px;padding:7px 12px;border-radius:999px}
+.hero-note{font-size:13px;color:var(--faint);margin-top:16px}
+
+/* Workflow visual */
+.flow-card{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow-lg);overflow:hidden}
+.flow-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;border-bottom:1px solid var(--line2);background:var(--surface)}
+.flow-head strong{font-size:13.5px}
+.flow-head .mono{font-size:12px;color:var(--faint)}
+.live-dot{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;color:var(--forest)}
+.live-dot i{width:8px;height:8px;border-radius:50%;background:var(--emerald);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(16,185,129,.45)}70%{box-shadow:0 0 0 8px rgba(16,185,129,0)}100%{box-shadow:0 0 0 0 rgba(16,185,129,0)}}
+.flow-svg{display:block;width:100%;height:auto}
+.flow-line{stroke:#a7f3d0;stroke-width:2;fill:none;stroke-dasharray:6 6;animation:dashmove 1.6s linear infinite}
+.flow-line.return{stroke:#d1d5db}
+@keyframes dashmove{to{stroke-dashoffset:-12}}
+.flow-node{transition:opacity .3s}
+.flow-node.dim{opacity:.35}
+.flow-node.active rect{stroke:var(--emerald);stroke-width:2.5}
+.flow-node.active .node-glow{opacity:1}
+.node-glow{opacity:0;transition:opacity .3s}
+.flow-foot{padding:14px 18px 16px;border-top:1px solid var(--line2)}
+.flow-log{font-family:"JetBrains Mono",monospace;font-size:12.5px;color:var(--muted);min-height:58px}
+.flow-log div{padding:2px 0}
+.flow-log .ok{color:var(--forest);font-weight:500}
+.flow-actions{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap;align-items:center}
+.flow-actions small{color:var(--faint);font-size:12px}
+
+/* ---------- About ---------- */
+.about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:start}
+.about-copy p{color:var(--muted);font-size:16.5px;margin-bottom:16px}
+.about-copy p strong{color:var(--ink)}
+.focus-list{display:grid;grid-template-columns:1fr 1fr;gap:10px 20px;margin-top:8px}
+.focus-list li{display:flex;gap:10px;font-size:14.5px;font-weight:600;color:var(--ink);align-items:flex-start}
+.focus-list svg{width:19px;height:19px;flex:0 0 auto;color:var(--emerald-dark);margin-top:2px}
+.glance{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+.glance h3{font-size:16px;margin-bottom:16px}
+.glance dl{display:grid;gap:0}
+.glance div{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-top:1px solid var(--line2);font-size:14px}
+.glance div:first-of-type{border-top:0}
+.glance dt{color:var(--faint);font-weight:600}
+.glance dd{margin:0;font-weight:700;text-align:right}
+.glance .email{word-break:break-all}
+.highlight-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+.hcard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;transition:border-color .2s,box-shadow .2s,transform .2s}
+.hcard:hover{border-color:#a7f3d0;box-shadow:var(--shadow);transform:translateY(-2px)}
+.hcard .icon{width:44px;height:44px;border-radius:11px;background:#ecfdf5;color:var(--forest);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.hcard .icon svg{width:22px;height:22px}
+.hcard h3{font-size:17px;margin-bottom:8px}
+.hcard p{color:var(--muted);font-size:14.5px}
+
+/* ---------- Skills ---------- */
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.skill-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+.skill-card.wide{grid-column:span 2}
+.skill-card h3{display:flex;align-items:center;gap:11px;font-size:17px;margin-bottom:8px}
+.skill-card h3 .icon{width:38px;height:38px;border-radius:9px;background:var(--surface2);color:var(--forest);display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.skill-card h3 .icon svg{width:19px;height:19px}
+.skill-card>p{color:var(--muted);font-size:14px;margin-bottom:18px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:7px 11px;font-size:13.5px;font-weight:600}
+.skills-note{margin-top:22px;font-size:13.5px;color:var(--faint);max-width:760px}
+.skills-note strong{color:var(--muted)}
+
+/* ---------- Projects ---------- */
+.filters{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:30px}
+.filter-btn{border:1px solid #d1d5db;background:#fff;color:var(--muted);font-weight:700;font-size:14px;padding:9px 16px;border-radius:999px;transition:all .18s}
+.filter-btn:hover{border-color:var(--forest);color:var(--forest)}
+.filter-btn[aria-pressed="true"]{background:var(--forest);border-color:var(--forest);color:#fff}
+.filter-btn .count{opacity:.7;font-weight:600;margin-left:5px;font-size:12.5px}
+.projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.project-card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .22s,transform .22s,border-color .22s}
+.project-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px);border-color:#a7f3d0}
+.project-card.hidden{display:none}
+.project-visual{padding:20px 20px 4px;background:linear-gradient(180deg,#f8fafc,#fff);border-bottom:1px solid var(--line2)}
+.mini-flow{display:flex;align-items:center;flex-wrap:wrap;gap:6px;font-family:"JetBrains Mono",monospace;font-size:11.5px}
+.mini-flow span{background:#fff;border:1px solid var(--line);border-radius:7px;padding:6px 9px;font-weight:500;color:var(--ink);white-space:nowrap}
+.mini-flow span.hl{background:#ecfdf5;border-color:#a7f3d0;color:var(--forest);font-weight:700}
+.mini-flow b{color:#9ca3af;font-weight:400}
+.project-body{padding:24px;display:flex;flex-direction:column;gap:14px;flex:1}
+.badges{display:flex;flex-wrap:wrap;gap:8px}
+.badge{font-size:12px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:5px 10px;border-radius:999px}
+.badge-cat{background:#ecfdf5;color:var(--forest)}
+.badge-status{background:#f1f5f9;color:#475569}
+.badge-concept{background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber-line)}
+.project-body h3{font-size:21px}
+.project-body>p{color:var(--muted);font-size:15px}
+.ps{display:grid;gap:10px;font-size:14px}
+.ps div{display:flex;gap:10px}
+.ps b{flex:0 0 74px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--forest);padding-top:2px}
+.ps p{color:var(--muted)}
+.ps p strong{color:var(--ink);font-weight:600}
+.caps{border-top:1px dashed var(--line);padding-top:14px}
+.caps h4{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-bottom:10px}
+.caps li{position:relative;padding-left:20px;color:var(--muted);font-size:14px;margin-bottom:7px}
+.caps li::before{content:"";position:absolute;left:2px;top:8px;width:7px;height:7px;border-radius:50%;background:var(--emerald)}
+.tech{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto}
+.tech span{font-size:12.5px;font-weight:600;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:5px 10px;color:var(--muted)}
+.project-foot{padding:0 24px 24px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.project-foot .note{font-size:12.5px;color:var(--faint)}
+.link-btn{background:none;border:0;color:var(--forest);font-weight:800;font-size:14.5px;padding:8px 0;display:inline-flex;gap:7px;align-items:center}
+.link-btn:hover{text-decoration:underline}
+.link-btn svg{width:16px;height:16px}
+
+/* ---------- Modal ---------- */
+.modal-backdrop{position:fixed;inset:0;background:rgba(17,24,39,.55);z-index:100;display:none;align-items:flex-start;justify-content:center;padding:28px 16px;overflow-y:auto}
+.modal-backdrop.open{display:flex}
+.modal{background:#fff;border-radius:18px;max-width:880px;width:100%;box-shadow:0 30px 80px rgba(0,0,0,.3);overflow:hidden}
+.modal-head{padding:26px 30px 20px;border-bottom:1px solid var(--line);position:sticky;top:0;background:#fff;z-index:2}
+.modal-head .badges{margin-bottom:12px}
+.modal-head h3{font-size:clamp(24px,3.4vw,32px);padding-right:44px}
+.modal-head p{color:var(--muted);margin-top:10px;font-size:15.5px}
+.modal-close{position:absolute;top:20px;right:20px;width:40px;height:40px;border-radius:10px;border:1px solid var(--line);background:#fff;font-size:20px;line-height:1;color:var(--ink)}
+.modal-close:hover{background:var(--surface)}
+.modal-body{padding:28px 30px 34px}
+.cs-section{margin-bottom:30px}
+.cs-section h4{font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--forest);margin-bottom:11px;display:flex;align-items:center;gap:10px}
+.cs-section h4 span{font-family:"JetBrains Mono",monospace;font-size:12px;color:#9ca3af}
+.cs-section p{color:var(--muted);font-size:15px;margin-bottom:8px}
+.cs-section p strong{color:var(--ink)}
+.cs-section li{position:relative;padding-left:20px;color:var(--muted);font-size:15px;margin-bottom:7px}
+.cs-section li::before{content:"";position:absolute;left:2px;top:9px;width:7px;height:7px;border-radius:50%;background:var(--emerald)}
+.cs-section li strong{color:var(--ink);font-weight:600}
+.cs-diagram{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px}
+.cs-diagram .mini-flow{font-size:12.5px}
+.cs-diagram .mini-flow span{padding:8px 11px}
+.cs-callout{background:#fffbeb;border:1px solid #fde68a;border-radius:12px;padding:16px 18px;color:#78350f;font-size:14.5px}
+.cs-callout strong{color:#451a03}
+.cs-grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.legend span{font-size:12.5px;font-weight:700;padding:6px 11px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted)}
+.legend span.impl{background:#ecfdf5;border-color:#a7f3d0;color:var(--forest)}
+.legend span.plan{background:var(--amber-bg);border-color:var(--amber-line);color:var(--amber)}
+
+/* ---------- Workflow Lab ---------- */
+.lab{background:var(--dark);color:#e5e7eb}
+.lab .section-head h2{color:#fff}
+.lab .section-head p{color:#9ca3af}
+.lab .kicker{color:#34d399}
+.lab-tabs{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:26px}
+.lab-tab{border:1px solid rgba(255,255,255,.22);background:transparent;color:#d1d5db;font-weight:700;font-size:14px;padding:10px 17px;border-radius:999px}
+.lab-tab[aria-pressed="true"]{background:var(--emerald);border-color:var(--emerald);color:#fff}
+.lab-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
+.lab-nodes{position:relative;padding-left:26px}
+.lab-nodes::before{content:"";position:absolute;left:8px;top:18px;bottom:18px;width:2px;background:rgba(255,255,255,.16)}
+.lab-progress{position:absolute;left:8px;top:18px;width:2px;background:var(--emerald);height:0;transition:height .5s ease}
+.lab-node{position:relative;display:flex;gap:14px;width:100%;text-align:left;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:15px 16px;margin-bottom:12px;color:#e5e7eb;transition:all .2s}
+.lab-node:hover{border-color:rgba(16,185,129,.6)}
+.lab-node .n{position:absolute;left:-26px;top:17px;width:18px;height:18px;border-radius:50%;background:#1f2937;border:2px solid #6b7280;z-index:1;transition:all .2s}
+.lab-node .step{font-family:"JetBrains Mono",monospace;font-size:11px;color:#6ee7b7;letter-spacing:.08em}
+.lab-node strong{display:block;font-size:15.5px;color:#fff;margin:2px 0}
+.lab-node small{color:#9ca3af;font-size:13px;line-height:1.45;display:block}
+.lab-node.active{background:rgba(16,185,129,.14);border-color:var(--emerald)}
+.lab-node.active .n{background:var(--emerald);border-color:#a7f3d0;box-shadow:0 0 0 5px rgba(16,185,129,.25)}
+.lab-detail{background:#fff;color:var(--ink);border-radius:16px;padding:26px;position:sticky;top:92px}
+.lab-detail .step{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--emerald-dark);letter-spacing:.08em;font-weight:500}
+.lab-detail h3{font-size:21px;margin:6px 0 10px}
+.lab-detail p{color:var(--muted);font-size:15px}
+.lab-detail ul{margin-top:14px}
+.lab-detail li{position:relative;padding-left:20px;color:var(--muted);font-size:14.5px;margin-bottom:8px}
+.lab-detail li::before{content:"";position:absolute;left:2px;top:8px;width:7px;height:7px;border-radius:50%;background:var(--emerald)}
+.lab-detail li strong{color:var(--ink)}
+.lab-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.lab-note{margin-top:24px;font-size:13px;color:#9ca3af;display:flex;gap:9px;align-items:flex-start}
+.lab-note svg{width:17px;height:17px;flex:0 0 auto;color:#6ee7b7;margin-top:2px}
+
+/* ---------- Timeline ---------- */
+.timeline{position:relative;margin-top:8px;padding-left:30px}
+.timeline::before{content:"";position:absolute;left:8px;top:8px;bottom:8px;width:2px;background:#d1fae5}
+.tl-item{position:relative;padding:0 0 38px}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{content:"";position:absolute;left:-30px;top:6px;width:18px;height:18px;border-radius:50%;background:#fff;border:3px solid var(--emerald)}
+.tl-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+.tl-card .when{font-size:12.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--emerald-dark)}
+.tl-card h3{font-size:19px;margin:7px 0 3px}
+.tl-card .org{font-weight:700;color:var(--muted);font-size:14.5px}
+.tl-card p{color:var(--muted);font-size:14.5px;margin-top:10px}
+.tl-card li{position:relative;padding-left:19px;color:var(--muted);font-size:14.5px;margin-bottom:6px}
+.tl-card li::before{content:"";position:absolute;left:2px;top:8px;width:6px;height:6px;border-radius:50%;background:var(--emerald)}
+.tl-card ul{margin-top:12px}
+.tl-note{border-style:dashed;background:var(--surface)}
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:44px}
+.edu-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.edu-card h3{font-size:17px;margin-bottom:6px}
+.edu-card .where{font-weight:700;color:var(--forest);font-size:14px}
+.edu-card p{color:var(--muted);font-size:14.5px;margin-top:9px}
+
+/* ---------- Process ---------- */
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;position:relative}
+.process-grid::before{content:"";position:absolute;top:34px;left:6%;right:6%;height:2px;background:#d1fae5;z-index:0}
+.pstep{position:relative;z-index:1;background:#fff}
+.pstep .num{width:68px;height:68px;border-radius:50%;background:#ecfdf5;border:2px solid #a7f3d0;color:var(--forest);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:19px;margin-bottom:18px}
+.pstep h3{font-size:18px;margin-bottom:8px}
+.pstep p{color:var(--muted);font-size:14.5px}
+
+/* ---------- Contact ---------- */
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:52px;align-items:start}
+.contact-grid h2{font-size:clamp(30px,4vw,42px)}
+.contact-grid .lead{color:var(--muted);font-size:17px;margin-top:14px}
+.contact-lines{margin-top:28px;display:grid;gap:14px}
+.contact-lines a,.contact-lines div{display:flex;gap:13px;align-items:flex-start;text-decoration:none;color:var(--ink)}
+.contact-lines .ic{width:42px;height:42px;border-radius:11px;background:#ecfdf5;color:var(--forest);display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.contact-lines .ic svg{width:20px;height:20px}
+.contact-lines small{display:block;color:var(--faint);font-size:12.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase}
+.contact-lines strong{font-size:15.5px;word-break:break-all}
+.include{margin-top:30px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px}
+.include h3{font-size:15px;margin-bottom:10px}
+.include li{position:relative;padding-left:20px;color:var(--muted);font-size:14.5px;margin-bottom:6px}
+.include li::before{content:"";position:absolute;left:2px;top:8px;width:7px;height:7px;border-radius:50%;background:var(--emerald)}
+.form-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px;box-shadow:var(--shadow)}
+.form-card h3{font-size:19px;margin-bottom:6px}
+.form-card>p{color:var(--muted);font-size:14.5px;margin-bottom:20px}
+.field{margin-bottom:16px}
+.field label{display:block;font-weight:700;font-size:13.5px;margin-bottom:7px}
+.field label span{color:#dc2626}
+.field input,.field select,.field textarea{width:100%;border:1px solid #d1d5db;border-radius:10px;padding:12px 13px;font:inherit;font-size:15px;background:#fff;color:var(--ink)}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--emerald);outline:3px solid rgba(16,185,129,.25)}
+.field textarea{min-height:128px;resize:vertical}
+.field .err{display:none;color:#b91c1c;font-size:13px;font-weight:600;margin-top:6px}
+.field.invalid input,.field.invalid select,.field.invalid textarea{border-color:#dc2626}
+.field.invalid .err{display:block}
+.hp{position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden}
+.form-error{display:none;background:#fef2f2;border:1px solid #fecaca;color:#991b1b;border-radius:10px;padding:13px 15px;font-size:14px;margin-bottom:16px}
+.form-error.show{display:block}
+.form-status{display:none;background:#ecfdf5;border:1px solid #a7f3d0;border-radius:12px;padding:18px;margin-top:18px}
+.form-status.show{display:block}
+.form-status h4{font-size:15.5px;color:var(--forest);margin-bottom:7px}
+.form-status p{color:var(--muted);font-size:14px}
+.form-status .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:13px}
+
+/* ---------- Footer ---------- */
+footer{border-top:1px solid var(--line);padding:44px 0 36px;background:var(--surface)}
+.foot-grid{display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap;align-items:flex-start}
+.foot-grid h3{font-size:17px}
+.foot-grid p{color:var(--muted);font-size:14px;margin-top:7px;max-width:340px}
+.foot-links{display:flex;gap:22px;flex-wrap:wrap}
+.foot-links a{text-decoration:none;color:var(--muted);font-weight:600;font-size:14px}
+.foot-links a:hover{color:var(--forest)}
+.foot-bottom{margin-top:32px;padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:13.5px;color:var(--faint)}
+.foot-bottom a{color:var(--muted)}
+
+/* ---------- Premium motion layer ---------- */
+.scroll-progress{position:fixed;top:0;left:0;height:3px;width:100%;z-index:80;pointer-events:none;background:transparent}
+.scroll-progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--forest),var(--emerald),#34d399);transition:width .12s linear}
+header.site{transition:box-shadow .3s var(--ease),background .3s var(--ease)}
+header.site.scrolled{box-shadow:0 6px 24px rgba(17,24,39,.08);background:rgba(255,255,255,.96)}
+.nav-links a{position:relative;transition:color .2s}
+.nav-links a::after{content:"";position:absolute;left:12px;right:12px;bottom:4px;height:2px;border-radius:2px;background:var(--emerald);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
+.nav-links a.active{color:var(--ink)}
+
+/* Reveal variants — hidden only once JS is confirmed running, so a JS
+   failure can never leave content invisible. */
+.reveal{opacity:1;transform:none}
+.js .reveal{opacity:0;transform:translateY(16px);transition:opacity .65s var(--ease),transform .65s var(--ease),clip-path .7s var(--ease)}
+.js .reveal.rv-left{transform:translateX(-14px)}
+.js .reveal.rv-right{transform:translateX(14px)}
+.js .reveal.rv-scale{transform:scale(.94)}
+.js .reveal.rv-clip{transform:none;clip-path:inset(0 100% 0 0)}
+.js .reveal.in{opacity:1;transform:none;clip-path:inset(0 0 0 0)}
+[data-stagger] .reveal{transition-delay:var(--d,0s)}
+
+/* Hero: animated dot grid + cursor light */
+.hero{position:relative;overflow:hidden;background:radial-gradient(720px 340px at 82% 8%,rgba(16,185,129,.10),transparent 65%),radial-gradient(560px 300px at 8% 92%,rgba(6,95,70,.06),transparent 60%),#fff}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(6,95,70,.14) 1px,transparent 1px),linear-gradient(rgba(6,95,70,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(6,95,70,.05) 1px,transparent 1px);background-size:26px 26px,52px 52px,52px 52px;mask-image:radial-gradient(720px 480px at 70% 20%,#000 30%,transparent 78%);animation:gridDrift 26s linear infinite}
+@keyframes gridDrift{to{background-position:26px 0,0 52px,52px 0}}
+.hero .container{position:relative;z-index:1}
+.hero-glow{position:absolute;width:420px;height:420px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(16,185,129,.16),transparent 65%);transform:translate(-50%,-50%);opacity:0;transition:opacity .4s;z-index:0;left:0;top:0}
+.hero:hover .hero-glow{opacity:1}
+
+/* Hero entrance: word-by-word headline, staggered blocks */
+.hero-anim{animation:heroUp .8s var(--ease) both;animation-delay:var(--d,0s)}
+@keyframes heroUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.hero h1 .w{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.24em;margin-bottom:-.24em}
+.hero h1 .wi{display:inline-block;animation:wordUp .85s var(--ease) both;animation-delay:calc(.12s + var(--i) * 68ms)}
+@keyframes wordUp{from{transform:translateY(112%)}to{transform:translateY(0)}}
+.hero h1 .grad{background:linear-gradient(100deg,#065f46 10%,#10b981 45%,#059669 70%,#065f46 95%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:gradSlide 6s ease-in-out infinite}
+@keyframes gradSlide{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.hero .chips .chip{animation:heroUp .6s var(--ease) both;animation-delay:calc(.62s + var(--i) * 60ms)}
+.btn-shine{position:relative;overflow:hidden;isolation:isolate}
+.btn-shine::after{content:"";position:absolute;top:0;left:-80%;width:55%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-18deg);transition:left .6s var(--ease);pointer-events:none}
+.btn-shine:hover::after{left:130%}
+.btn-primary:active,.btn-outline:active,.btn-dark:active{transform:translateY(1px) scale(.985)}
+.magnetic{transition:transform .22s var(--ease),background .18s,box-shadow .18s,border-color .18s;will-change:transform}
+
+/* Hero visual: glow, glass card, floating labels */
+.hero-visual{position:relative;will-change:transform}
+.hero-visual::before{content:"";position:absolute;inset:-30px -24px;background:radial-gradient(closest-side,rgba(16,185,129,.22),transparent 72%);filter:blur(6px);z-index:-1;animation:glowPulse 5.5s ease-in-out infinite;pointer-events:none}
+@keyframes glowPulse{0%,100%{opacity:.65;transform:scale(.97)}50%{opacity:1;transform:scale(1.03)}}
+.hero-visual .flow-card{background:rgba(255,255,255,.86);backdrop-filter:blur(8px);will-change:transform}
+.float-chip{position:absolute;z-index:3;display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid var(--line);border-radius:999px;box-shadow:var(--shadow);font-family:"JetBrains Mono",monospace;font-size:11.5px;font-weight:500;color:var(--muted);padding:7px 12px;white-space:nowrap;animation:floatY 5s ease-in-out infinite;animation-delay:var(--d,0s);will-change:transform}
+.float-chip i{width:7px;height:7px;border-radius:50%;background:var(--emerald);flex:0 0 auto}
+.float-chip b{color:var(--forest);font-weight:700}
+.float-chip.api{top:-38px;left:0}
+.float-chip.ai{top:-38px;right:0;--d:.8s}
+.float-chip.webhook{bottom:-38px;left:0;--d:1.6s}
+.float-chip.db{bottom:-38px;right:0;--d:2.3s}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.flow-status{font-size:12px;font-weight:700;color:var(--forest);background:#ecfdf5;border:1px solid #a7f3d0;border-radius:999px;padding:5px 10px;white-space:nowrap}
+.flow-status.running{color:#fff;background:var(--emerald);border-color:var(--emerald)}
+.flow-node{transform-box:fill-box;transform-origin:center;transition:opacity .35s var(--ease),transform .35s var(--ease)}
+.flow-node.active{transform:scale(1.045)}
+.flow-node.active rect{filter:drop-shadow(0 4px 14px rgba(16,185,129,.45))}
+#heroPacket{opacity:0;transition:opacity .25s}
+#heroPacket.on{opacity:1}
+.flow-log div{animation:logIn .45s var(--ease) both}
+@keyframes logIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+.flow-card.is-offscreen .flow-line{animation-play-state:paused}
+
+/* About / skills */
+.hcard .icon svg,.skill-card h3 .icon svg{transition:transform .3s var(--ease)}
+.hcard:hover .icon svg{transform:translateY(-2px) rotate(-6deg)}
+.skill-card h3 .icon svg{transition:transform .3s var(--ease)}
+.skill-card:hover h3 .icon svg{transform:translateY(-2px)}
+.tag{transition:transform .22s var(--ease),border-color .22s,background .22s}
+.tag:hover{transform:translateY(-2px);border-color:#a7f3d0;background:#ecfdf5}
+.skill-links{margin-top:16px;padding-top:13px;border-top:1px dashed var(--line);font-size:13px;color:var(--faint);display:flex;flex-wrap:wrap;gap:7px;align-items:center}
+.skill-links span{font-weight:700;color:var(--muted);font-size:12px;letter-spacing:.05em;text-transform:uppercase}
+.skill-link{border:1px solid var(--line);background:#fff;border-radius:999px;padding:5px 11px;font-size:12.5px;font-weight:700;color:var(--forest)}
+.skill-link:hover{border-color:var(--emerald);background:#ecfdf5}
+.skill-link svg{display:inline-block;vertical-align:-2px;width:13px;height:13px;margin-left:3px;transition:transform .25s var(--ease)}
+.skill-link:hover svg{transform:translateX(3px)}
+
+/* Project cards: tilt spotlight, animated border, flowing previews */
+.projects-grid{perspective:1200px}
+.project-card{position:relative}
+.project-card::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.5px;background:linear-gradient(120deg,transparent 20%,#10b981 50%,transparent 80%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .35s;pointer-events:none;z-index:2}
+.project-card:hover::before,.project-card:focus-within::before{opacity:1}
+.project-card::after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(220px circle at var(--mx,50%) var(--my,0%),rgba(16,185,129,.09),transparent 70%);opacity:0;transition:opacity .35s;pointer-events:none}
+.project-card:hover::after{opacity:1}
+.project-card.tilting{transition:box-shadow .22s,border-color .22s;will-change:transform}
+.mini-flow span{transition:transform .3s var(--ease),border-color .3s,background .3s}
+.mini-flow b{display:inline-block;animation:arrowNudge 1.8s ease-in-out infinite}
+@keyframes arrowNudge{0%,100%{transform:translateX(0);opacity:.7}50%{transform:translateX(3px);opacity:1}}
+.project-card:hover .mini-flow span.hl{transform:translateY(-2px)}
+.project-card:hover .mini-flow{animation:flowSlide 2.6s ease-in-out infinite}
+@keyframes flowSlide{0%,100%{transform:translateX(0)}50%{transform:translateX(3px)}}
+.card-extra{max-height:0;opacity:0;overflow:hidden;transition:max-height .45s var(--ease),opacity .35s,margin .35s;font-size:13.5px;color:var(--faint);border-top:0 solid var(--line2)}
+.card-extra p{padding-top:12px}
+.project-card:hover .card-extra,.project-card:focus-within .card-extra{max-height:70px;opacity:1}
+@media (hover:none){.card-extra{max-height:none;opacity:1}.card-extra p{padding-top:12px}}
+.link-btn svg{transition:transform .28s var(--ease)}
+.link-btn:hover svg,.link-btn:focus-visible svg{transform:translateX(5px)}
+
+/* Modal entrance / exit + staggered content */
+.modal-backdrop.open .modal{animation:modalIn .42s var(--ease) both}
+.modal-backdrop.open{animation:fadeIn .25s ease both}
+.modal-backdrop.closing .modal{animation:modalOut .19s ease both}
+.modal-backdrop.closing{animation:fadeOut .19s ease both}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes fadeOut{to{opacity:0}}
+@keyframes modalIn{from{opacity:0;transform:translateY(22px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes modalOut{to{opacity:0;transform:translateY(12px) scale(.98)}}
+.cs-section.cs-anim{animation:heroUp .55s var(--ease) both;animation-delay:var(--d,0s)}
+
+/* Workflow Lab: packet, pulse ring, progress, detail animation */
+.lab{position:relative}
+.lab::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--emerald),#34d399,transparent);background-size:200% 100%;animation:gradSlide 7s ease-in-out infinite;opacity:.7}
+.lab-progressbar{height:5px;border-radius:99px;background:rgba(255,255,255,.12);overflow:hidden;margin-bottom:22px}
+.lab-progressbar span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--emerald),#34d399);border-radius:99px;transition:width .55s var(--ease)}
+.lab-status{font-family:"JetBrains Mono",monospace;font-size:12px;color:#6ee7b7}
+.lab-packet{position:absolute;left:8px;top:26px;width:14px;height:14px;margin-left:-7px;border-radius:50%;background:#34d399;border:2px solid #ecfdf5;box-shadow:0 0 0 5px rgba(16,185,129,.25),0 0 14px rgba(52,211,153,.8);transition:top .55s var(--ease);z-index:2;pointer-events:none}
+.lab-node .n{animation:none}
+.lab-node.active .n{animation:ringPulse 1.8s ease-out infinite}
+@keyframes ringPulse{0%{box-shadow:0 0 0 0 rgba(16,185,129,.5)}70%{box-shadow:0 0 0 9px rgba(16,185,129,0)}100%{box-shadow:0 0 0 0 rgba(16,185,129,0)}}
+.lab-nodes.switching{animation:labSwap .3s var(--ease) both}
+@keyframes labSwap{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.lab-detail.detail-anim{animation:detailIn .45s var(--ease) both}
+@keyframes detailIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.lab-node{transition:background .25s,border-color .25s,transform .25s var(--ease)}
+.lab-node:active{transform:scale(.99)}
+
+/* Experience timeline: scroll-drawn line + markers */
+.timeline{position:relative}
+.timeline-progress{position:absolute;left:8px;top:8px;bottom:8px;width:2px;background:var(--emerald);transform-origin:top;transform:scaleY(var(--tl,0));z-index:1}
+.tl-item::before{z-index:2;transition:transform .4s var(--ease),box-shadow .4s}
+.tl-item.in::before{transform:scale(1.18);box-shadow:0 0 0 6px rgba(16,185,129,.18)}
+.edu-grid{will-change:transform}
+
+/* Process: connector draws in */
+.process-grid::before{transform:scaleX(0);transform-origin:left;transition:transform 1s var(--ease) .15s}
+#process.in-view .process-grid::before{transform:scaleX(1)}
+.pstep .num{transition:transform .35s var(--ease),background .3s,border-color .3s}
+.pstep:hover .num{transform:scale(1.07) rotate(-4deg);background:#d1fae5}
+
+/* Contact: focus glow, validation shake, link sweep */
+.field{position:relative}
+.field input,.field select,.field textarea{transition:border-color .25s,box-shadow .25s,transform .25s}
+.field:focus-within label{color:var(--forest)}
+.field:focus-within input,.field:focus-within select,.field:focus-within textarea{box-shadow:0 0 0 4px rgba(16,185,129,.16)}
+.field.invalid input,.field.invalid select,.field.invalid textarea{animation:shake .35s var(--ease)}
+@keyframes shake{20%{transform:translateX(-4px)}45%{transform:translateX(4px)}70%{transform:translateX(-3px)}90%{transform:translateX(2px)}}
+.contact-lines a{position:relative;border-radius:12px;transition:background .25s,transform .25s var(--ease)}
+.contact-lines a:hover{background:var(--surface);transform:translateX(3px)}
+.contact-lines a:hover .ic{transform:translateY(-2px)}
+.contact-lines .ic{transition:transform .25s var(--ease),background .25s}
+.contact-lines a strong{background-image:linear-gradient(var(--emerald),var(--emerald));background-size:0% 2px;background-repeat:no-repeat;background-position:0 100%;transition:background-size .35s var(--ease);padding-bottom:2px}
+.contact-lines a:hover strong{background-size:100% 2px}
+
+/* Mobile menu: fully hidden when closed; animated entrance + staggered links when opened */
+.mobile-menu{display:none}
+.mobile-menu.open{display:block;animation:menuIn .35s var(--ease) both}
+.mobile-menu.open a{animation:menuLinkIn .38s var(--ease) both;animation-delay:calc(var(--i,0) * 45ms + 50ms)}
+.mobile-menu .btn{margin-top:14px}
+@keyframes menuIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+@keyframes menuLinkIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+
+@media (max-width:960px){
+  .float-chip.api,.float-chip.webhook{left:0}
+  .float-chip.ai,.float-chip.db{right:0}
+}
+@media (max-width:640px){
+  .float-chip{display:none}
+  .hero-visual::before{inset:-16px -10px}
+}
+@media (prefers-reduced-motion:reduce){
+  .js .reveal,.js .reveal.rv-left,.js .reveal.rv-right,.js .reveal.rv-scale,.js .reveal.rv-clip{opacity:1 !important;transform:none !important;clip-path:none !important;transition:none !important}
+  .hero::before,.hero-visual::before,.float-chip,.mini-flow b,.lab-node.active .n,.lab::before{animation:none !important}
+  .hero-anim,.hero h1 .wi,.hero .chips .chip,.flow-log div,.cs-section.cs-anim,.lab-detail.detail-anim,.lab-nodes.switching,.modal-backdrop.open .modal{animation:none !important;opacity:1 !important;transform:none !important}
+  .hero h1 .grad{animation:none !important}
+  .hero-glow,#heroPacket,.lab-packet{display:none !important}
+  .process-grid::before{transform:scaleX(1);transition:none}
+}
+
+/* Motion-layer fixes: wrapping card header, stable demo log height,
+   hover lift preserved on revealed cards, collapsed menu padding. */
+.flow-head{flex-wrap:wrap;row-gap:6px}
+.flow-log{display:flex;flex-direction:column;justify-content:flex-end;height:105px;overflow:hidden}
+.js .reveal.in.hcard:hover{transform:translateY(-2px)}
+.js .reveal.in.project-card:hover{transform:translateY(-3px)}
+.mobile-menu{padding:0 24px}
+.mobile-menu.open{padding:12px 24px 18px}
+
+/* ---------- Responsive ---------- */
+@media (max-width:960px){
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .about-grid,.contact-grid,.lab-grid{grid-template-columns:1fr}
+  .lab-detail{position:static}
+  .skills-grid{grid-template-columns:1fr 1fr}
+  .skill-card.wide{grid-column:span 2}
+  .projects-grid{grid-template-columns:1fr}
+  .process-grid{grid-template-columns:1fr 1fr}
+  .process-grid::before{display:none}
+  section{padding:72px 0}
+}
+@media (max-width:640px){
+  .nav-links,.nav-cta{display:none}
+  .menu-btn{display:inline-flex}
+  .container{padding:0 18px}
+  .hero{padding:48px 0 64px}
+  .hero h1{font-size:37px}
+  .highlight-cards,.skills-grid,.edu-grid,.cs-grid2{grid-template-columns:1fr}
+  .skill-card.wide{grid-column:span 1}
+  .focus-list{grid-template-columns:1fr}
+  .process-grid{grid-template-columns:1fr}
+  .modal-backdrop{padding:12px 10px}
+  .modal-head,.modal-body{padding-left:20px;padding-right:20px}
+  .ps b{flex-basis:64px}
+  .flow-actions .btn{flex:1}
+  .form-card{padding:22px 18px}
+  .glance div{flex-direction:column;gap:2px}
+  .glance dd{text-align:left}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div class="scroll-progress" aria-hidden="true"><span id="scrollProgressBar"></span></div>
+
+<header class="site" id="siteHeader">
+  <div class="container nav">
+    <a class="brand" href="#home" aria-label="Krrish Kishore — home">
+      <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#065F46"/><circle cx="20" cy="20" r="6" fill="#10B981"/><circle cx="44" cy="20" r="6" fill="#fff"/><circle cx="32" cy="44" r="6" fill="#10B981"/><path d="M25 23 29 38M39 23 35 38M26 20h12" stroke="#fff" stroke-width="3" fill="none"/></svg>
+      <span><span class="brand-name">Krrish Kishore</span><span class="brand-role">AI Automation Engineer</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-primary btn-sm nav-cta" href="#contact">Let&rsquo;s Work Together</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
+    <a href="#home" style="--i:0">Home</a>
+    <a href="#about" style="--i:1">About</a>
+    <a href="#skills" style="--i:2">Skills</a>
+    <a href="#projects" style="--i:3">Projects</a>
+    <a href="#experience" style="--i:4">Experience</a>
+    <a href="#contact" style="--i:5">Contact</a>
+    <a class="btn btn-primary" href="#contact" style="--i:6">Let&rsquo;s Work Together</a>
+  </nav>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="hero-glow" id="heroGlow" aria-hidden="true"></div>
+  <div class="container hero-grid">
+    <div>
+      <p class="eyebrow hero-anim" style="--d:.05s">AI Automation Engineer &middot; Karachi, Pakistan</p>
+      <h1 aria-label="I Build Intelligent Automations That Turn Repetitive Work Into Results."><span class="w"><span class="wi" style="--i:0">I</span></span> <span class="w"><span class="wi" style="--i:1">Build</span></span> <span class="w"><span class="wi grad" style="--i:2">Intelligent</span></span> <span class="w"><span class="wi" style="--i:3">Automations</span></span> <span class="w"><span class="wi" style="--i:4">That</span></span> <span class="w"><span class="wi" style="--i:5">Turn</span></span> <span class="w"><span class="wi" style="--i:6">Repetitive</span></span> <span class="w"><span class="wi" style="--i:7">Work</span></span> <span class="w"><span class="wi" style="--i:8">Into</span></span> <span class="w"><span class="wi grad" style="--i:9">Results.</span></span></h1>
+      <p class="hero-sub hero-anim" style="--d:.5s">I design and build AI-powered workflows, intelligent agents, and business automation systems using n8n, LLMs, APIs, and modern databases.</p>
+      <div class="hero-ctas hero-anim" style="--d:.62s">
+        <a class="btn btn-primary btn-shine magnetic" href="#projects">Explore My Work</a>
+        <a class="btn btn-outline magnetic" href="#contact">Contact Me</a>
+      </div>
+      <div class="hero-meta hero-anim" style="--d:.74s">
+        <span class="avail"><i aria-hidden="true"></i>Availability — enquire for current capacity</span>
+        <span class="loc">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          Karachi, Pakistan
+        </span>
+      </div>
+      <div class="chips hero-anim" style="--d:.8s" aria-label="Core skills">
+        <span class="chip" style="--i:0">n8n</span><span class="chip" style="--i:1">AI Agents</span><span class="chip" style="--i:2">OpenAI</span><span class="chip" style="--i:3">RAG</span><span class="chip" style="--i:4">API Integrations</span><span class="chip" style="--i:5">Supabase</span>
+      </div>
+      <p class="hero-note hero-anim" style="--d:.95s">AI Automation Engineer &middot; n8n Developer &middot; AI Agent Builder &middot; approx. 1.5 years of practical experience.</p>
+    </div>
+
+    <div class="hero-visual" id="heroVisual">
+      <span class="float-chip api" data-depth="14" aria-hidden="true"><i></i><b>API</b> REST · JSON</span>
+      <span class="float-chip ai" data-depth="22" aria-hidden="true"><i></i><b>AI</b> grounded replies</span>
+      <span class="float-chip webhook" data-depth="18" aria-hidden="true"><i></i><b>Webhook</b> live trigger</span>
+      <span class="float-chip db" data-depth="12" aria-hidden="true"><i></i><b>Database</b> vector search</span>
+    <div class="flow-card" id="flowCard" aria-label="Automation workflow illustration">
+      <div class="flow-head">
+        <strong>Customer support, automated</strong>
+        <span class="flow-status" id="heroStatus">Demo &middot; Ready</span>
+        <span class="live-dot"><i aria-hidden="true"></i>Demo diagram</span>
+      </div>
+      <svg class="flow-svg" viewBox="0 0 520 340" role="img" aria-label="Workflow diagram: a WhatsApp message goes to n8n, then to an AI agent, which checks Supabase, Google Sheets and a CRM before replying.">
+        <defs>
+          <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#10B981"/></marker>
+        </defs>
+        <path id="ln-wa-n8n" class="flow-line" d="M118 62 H168" marker-end="url(#arr)"/>
+        <path id="ln-n8n-agent" class="flow-line" d="M352 62 H358 C 392 62 392 118 348 128" marker-end="url(#arr)"/>
+        <path id="ln-agent-supabase" class="flow-line" d="M238 168 C 190 196 148 214 118 238" marker-end="url(#arr)"/>
+        <path id="ln-agent-sheets" class="flow-line" d="M260 182 V 236" marker-end="url(#arr)"/>
+        <path id="ln-agent-crm" class="flow-line" d="M282 168 C 330 196 372 214 402 238" marker-end="url(#arr)"/>
+        <path id="ln-reply" class="flow-line return" d="M196 184 C 118 200 48 238 48 178 C 48 138 54 110 64 92" marker-end="url(#arr)" stroke-dasharray="4 5"/>
+        <circle id="heroPacket" r="5.5" fill="#10b981" stroke="#ffffff" stroke-width="2" cx="-20" cy="-20" aria-hidden="true"/>
+        <g class="flow-node" id="hn-whatsapp">
+          <rect x="18" y="34" width="100" height="56" rx="12" fill="#fff" stroke="#e5e7eb"/>
+          <circle class="node-glow" cx="68" cy="62" r="34" fill="rgba(16,185,129,.08)"/>
+          <text x="68" y="58" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">WhatsApp</text>
+          <text x="68" y="76" text-anchor="middle" font-size="10.5" fill="#6b7280">Customer message</text>
+        </g>
+        <g class="flow-node" id="hn-n8n">
+          <rect x="168" y="34" width="100" height="56" rx="12" fill="#065F46" stroke="#065F46"/>
+          <circle class="node-glow" cx="218" cy="62" r="34" fill="rgba(16,185,129,.12)"/>
+          <text x="218" y="58" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">n8n</text>
+          <text x="218" y="76" text-anchor="middle" font-size="10.5" fill="#a7f3d0">Webhook &amp; routing</text>
+        </g>
+        <g class="flow-node" id="hn-agent">
+          <rect x="186" y="126" width="148" height="58" rx="12" fill="#ecfdf5" stroke="#a7f3d0"/>
+          <circle class="node-glow" cx="260" cy="155" r="42" fill="rgba(16,185,129,.08)"/>
+          <text x="260" y="150" text-anchor="middle" font-size="13.5" font-weight="800" fill="#065F46">AI Agent</text>
+          <text x="260" y="168" text-anchor="middle" font-size="10.5" fill="#4b5563">Intent + grounded reply</text>
+        </g>
+        <g class="flow-node" id="hn-supabase">
+          <rect x="18" y="246" width="100" height="56" rx="12" fill="#fff" stroke="#e5e7eb"/>
+          <circle class="node-glow" cx="68" cy="274" r="34" fill="rgba(16,185,129,.08)"/>
+          <text x="68" y="268" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">Supabase</text>
+          <text x="68" y="286" text-anchor="middle" font-size="10.5" fill="#6b7280">Vector search</text>
+        </g>
+        <g class="flow-node" id="hn-sheets">
+          <rect x="210" y="246" width="100" height="56" rx="12" fill="#fff" stroke="#e5e7eb"/>
+          <circle class="node-glow" cx="260" cy="274" r="34" fill="rgba(16,185,129,.08)"/>
+          <text x="260" y="268" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">Google Sheets</text>
+          <text x="260" y="286" text-anchor="middle" font-size="10.5" fill="#6b7280">Records &amp; status</text>
+        </g>
+        <g class="flow-node" id="hn-crm">
+          <rect x="402" y="246" width="100" height="56" rx="12" fill="#fff" stroke="#e5e7eb"/>
+          <circle class="node-glow" cx="452" cy="274" r="34" fill="rgba(16,185,129,.08)"/>
+          <text x="452" y="268" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">CRM</text>
+          <text x="452" y="286" text-anchor="middle" font-size="10.5" fill="#6b7280">Lead &amp; order data</text>
+        </g>
+        <text x="18" y="326" font-size="11" fill="#9ca3af" font-family="JetBrains Mono, monospace">dashed line = validated reply back to the customer</text>
+      </svg>
+      <div class="flow-foot">
+        <div class="flow-log" id="heroLog" aria-live="polite">
+          <div>&rsaquo; Ready. Press <span class="ok">Play demo</span> to walk through the diagram.</div>
+        </div>
+        <div class="flow-actions">
+          <button class="btn btn-dark btn-sm" id="runHeroDemo" type="button" aria-pressed="false">Play demo</button>
+          <button class="btn btn-outline btn-sm" id="resetHeroDemo" type="button">Reset</button>
+          <small>Loops until paused. Illustration only — no real workflow runs.</small>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="kicker">About Me</p>
+      <h2>Engineering Smarter Workflows With AI</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-copy reveal rv-left">
+        <p>I specialise in <strong>connecting AI models, business applications, APIs, and databases</strong> so repetitive processes run themselves — and people get their time back. My work is practical first: a workflow only counts when it handles real messages, real records, and real edge cases reliably.</p>
+        <p>Across customer support, lead management, and business operations, I focus on systems that are <strong>easy for a business to use, straightforward to maintain, and honest about their limits</strong> — with validation and human fallbacks built in, not added later.</p>
+        <ul class="focus-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Workflow automation &amp; orchestration</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>AI-powered customer support</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Lead capture &amp; lead management</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>WhatsApp Business integrations</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>LLM-powered business assistants</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Data processing &amp; API integrations</li>
+        </ul>
+      </div>
+      <aside class="glance reveal rv-clip" aria-label="At a glance">
+        <h3>At a glance</h3>
+        <dl>
+          <div><dt>Role</dt><dd>AI Automation Engineer</dd></div>
+          <div><dt>Based in</dt><dd>Karachi, Pakistan</dd></div>
+          <div><dt>Experience</dt><dd>Approx. 1.5 years</dd></div>
+          <div><dt>Core stack</dt><dd>n8n &middot; OpenAI &middot; Supabase</dd></div>
+          <div><dt>Focus</dt><dd>AI agents &amp; workflows</dd></div>
+          <div><dt>Email</dt><dd class="email"><a href="mailto:krrishkishore195@gmail.com">krrishkishore195@gmail.com</a></dd></div>
+        </dl>
+      </aside>
+    </div>
+    <div class="highlight-cards" data-stagger>
+      <article class="hcard reveal" style="--d:0s">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="8.5" y="14" width="7" height="7" rx="1.5"/><path d="M6.5 10v2.5a2 2 0 0 0 2 2H12m6.5-4.5v2.5a2 2 0 0 1-2 2H12"/></svg></div>
+        <h3>AI Workflow Development</h3>
+        <p>End-to-end n8n workflows that connect triggers, AI models, and business tools into one dependable flow — with error handling for the paths that break.</p>
+      </article>
+      <article class="hcard reveal" style="--d:.11s">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/><path d="M12 7v5l3 3"/></svg></div>
+        <h3>Business Process Automation</h3>
+        <p>Manual, repeated work — enquiries, records, follow-ups, order data — mapped first, then automated step by step, so the business keeps control of the process.</p>
+      </article>
+      <article class="hcard reveal" style="--d:.22s">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.5L3 21l2-5.6A8.5 8.5 0 1 1 21 11.5Z"/><path d="M8.5 11h.01M12 11h.01M15.5 11h.01"/></svg></div>
+        <h3>Intelligent Customer Support</h3>
+        <p>Support assistants grounded in a real knowledge base, with order validation and a human fallback — so customers get accurate answers, not confident guesses.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section class="alt" id="skills">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="kicker">Skills &amp; Technologies</p>
+      <h2>Tools I actually build with</h2>
+      <p>Grouped by what each tool does in a workflow. Everything listed here is something I have used or studied — nothing is rated with a percentage.</p>
+    </div>
+    <div class="skills-grid" data-stagger>
+      <article class="skill-card reveal rv-scale" style="--d:0s">
+        <h3><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="5" cy="6" r="2.2"/><circle cx="19" cy="6" r="2.2"/><circle cx="12" cy="18" r="2.2"/><path d="M7 7.5 10.5 16M17 7.5 13.5 16M7.2 6h9.6"/></svg></span>Workflow Automation</h3>
+        <p>The orchestration layer — where triggers, branches, and integrations come together.</p>
+        <div class="tags"><span class="tag">n8n</span><span class="tag">Make</span><span class="tag">Zapier</span><span class="tag">Pabbly Connect</span></div>
+        <div class="skill-links"><span>See in a case study</span><button class="skill-link" type="button" data-case="p1">Customer Support <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button><button class="skill-link" type="button" data-case="p2">Lead Management <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
+      </article>
+      <article class="skill-card reveal rv-scale" style="--d:.09s">
+        <h3><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a5 5 0 0 1 5 5c2.2.6 3.5 2.4 3.5 4.5S19.5 17 17 17H7c-2.5 0-3.5-1.8-3.5-4.5S4.8 8.6 7 8a5 5 0 0 1 5-5Z"/><path d="M12 8v5M9.5 10.5h5"/></svg></span>AI &amp; LLMs</h3>
+        <p>Models, agents, and retrieval — used with grounding and validation, not as a black box.</p>
+        <div class="tags"><span class="tag">OpenAI</span><span class="tag">Claude</span><span class="tag">Gemini</span><span class="tag">Prompt Engineering</span><span class="tag">AI Agents</span><span class="tag">Retrieval-Augmented Generation (RAG)</span></div>
+        <div class="skill-links"><span>See in a case study</span><button class="skill-link" type="button" data-case="p1">Customer Support <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button><button class="skill-link" type="button" data-case="p4">ContentFlow AI <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
+      </article>
+      <article class="skill-card reveal rv-scale" style="--d:.18s">
+        <h3><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1.5 1.5"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1.5-1.5"/></svg></span>APIs &amp; Integrations</h3>
+        <p>Connecting the platforms businesses already use, reliably and with the right checks.</p>
+        <div class="tags"><span class="tag">REST APIs</span><span class="tag">Webhooks</span><span class="tag">WhatsApp Business Cloud API</span><span class="tag">Meta Graph API</span><span class="tag">Instagram integrations</span><span class="tag">Google APIs</span></div>
+        <div class="skill-links"><span>See in a case study</span><button class="skill-link" type="button" data-case="p2">Lead Management <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button><button class="skill-link" type="button" data-case="p3">Restaurant Ordering <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
+      </article>
+      <article class="skill-card reveal rv-scale" style="--d:.27s">
+        <h3><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><ellipse cx="12" cy="5.5" rx="8" ry="2.8"/><path d="M4 5.5v13c0 1.5 3.6 2.8 8 2.8s8-1.3 8-2.8v-13"/><path d="M4 12c0 1.5 3.6 2.8 8 2.8s8-1.3 8-2.8"/></svg></span>Data &amp; Backend</h3>
+        <p>Where records live, how they are searched, and how they stay consistent.</p>
+        <div class="tags"><span class="tag">Supabase</span><span class="tag">PostgreSQL fundamentals</span><span class="tag">Google Sheets</span><span class="tag">Notion</span><span class="tag">CRM integrations</span><span class="tag">Vector embeddings &amp; vector search</span></div>
+        <div class="skill-links"><span>See in a case study</span><button class="skill-link" type="button" data-case="p1">Customer Support <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button><button class="skill-link" type="button" data-case="p2">Lead Management <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
+      </article>
+      <article class="skill-card wide reveal rv-scale" style="--d:.36s">
+        <h3><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13 5l-2 14"/></svg></span>Development</h3>
+        <p>The code and debugging skills that keep workflows honest — reading API responses, tracing failures, and fixing the edge case instead of hiding it.</p>
+        <div class="tags"><span class="tag">JavaScript</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JSON</span><span class="tag">API debugging</span><span class="tag">Workflow error handling</span></div>
+        <div class="skill-links"><span>See in a case study</span><button class="skill-link" type="button" data-case="p1">Customer Support <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button><button class="skill-link" type="button" data-case="p3">Restaurant Ordering <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
+      </article>
+    </div>
+    <p class="skills-note"><strong>Note:</strong> I don&rsquo;t use percentage ratings — a workflow either handles its cases or it doesn&rsquo;t, and the case studies show which is which.</p>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="projects">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="kicker">Featured Projects</p>
+      <h2>Real workflows, shown in full</h2>
+      <p>Every project opens as a detailed case study — problem, architecture, validation, testing, and limitations. Implemented features are kept separate from planned ones.</p>
+    </div>
+
+    <div class="filters" role="group" aria-label="Filter projects by category">
+      <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">All Projects<span class="count">5</span></button>
+      <button class="filter-btn" type="button" data-filter="ai-agents" aria-pressed="false">AI Agents<span class="count">2</span></button>
+      <button class="filter-btn" type="button" data-filter="workflow-automation" aria-pressed="false">Workflow Automation<span class="count">2</span></button>
+      <button class="filter-btn" type="button" data-filter="customer-support" aria-pressed="false">Customer Support<span class="count">1</span></button>
+      <button class="filter-btn" type="button" data-filter="business-systems" aria-pressed="false">Business Systems<span class="count">2</span></button>
+    </div>
+
+    <div class="projects-grid" id="projectsGrid">
+
+      <article class="project-card reveal rv-left" data-cats="ai-agents customer-support">
+        <div class="project-visual"><div class="mini-flow" aria-hidden="true"><span>Customer Message</span><b>&rarr;</b><span class="hl">Intent Detection</span><b>&rarr;</b><span>Order Lookup / Retrieval</span><b>&rarr;</b><span class="hl">AI Response</span><b>&rarr;</b><span>Customer</span></div></div>
+        <div class="project-body">
+          <div class="badges"><span class="badge badge-cat">AI Agents / RAG</span><span class="badge badge-status">Built workflow</span></div>
+          <h3>AI Customer Support Automation System</h3>
+          <p>An AI-powered support workflow that answers from a knowledge base — products, prices, delivery, returns, cancellations, and order updates — instead of guessing.</p>
+          <div class="ps">
+            <div><b>Problem</b><p>Repeated customer questions, handled manually and inconsistently, with sensitive order changes made without reliable checks.</p></div>
+            <div><b>Solution</b><p><strong>RAG architecture:</strong> retrieve the relevant knowledge first, then generate the reply from what was retrieved — in English or Roman Urdu.</p></div>
+          </div>
+          <div class="caps">
+            <h4>Actual capabilities</h4>
+            <ul>
+              <li>Order lookup, pending-order cancellation logic, and delivery-address update validation</li>
+              <li>Customer and order validation before any sensitive change</li>
+              <li>Human-support fallback when the answer is unavailable</li>
+            </ul>
+          </div>
+          <div class="tech"><span>n8n</span><span>OpenAI</span><span>Supabase</span><span>PostgreSQL</span><span>WhatsApp</span></div>
+          <div class="card-extra" aria-hidden="true"><p>In the case study: RAG architecture, validation rules, and the human-fallback paths.</p></div>
+        </div>
+        <div class="project-foot">
+          <button class="link-btn" type="button" data-case="p1">View Case Study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </div>
+      </article>
+
+      <article class="project-card reveal rv-right" data-cats="workflow-automation business-systems">
+        <div class="project-visual"><div class="mini-flow" aria-hidden="true"><span>Incoming DM</span><b>&rarr;</b><span class="hl">Identify Lead</span><b>&rarr;</b><span>Check Existing Record</span><b>&rarr;</b><span class="hl">AI Response</span><b>&rarr;</b><span>Update Record</span><b>&rarr;</b><span>Follow-up</span></div></div>
+        <div class="project-body">
+          <div class="badges"><span class="badge badge-cat">Workflow Automation</span><span class="badge badge-status">Built workflow</span></div>
+          <h3>AI Lead Management Automation</h3>
+          <p>An automated system that organises incoming social media enquiries and keeps lead status, follow-ups, and history in one maintained record.</p>
+          <div class="ps">
+            <div><b>Problem</b><p>Enquiries arriving as DMs were easy to miss, easy to duplicate, and hard to follow up on consistently.</p></div>
+            <div><b>Solution</b><p><strong>Identify by unique user ID, deduplicate, reply with AI assistance,</strong> and keep status, follow-up counts, and timestamps in Google Sheets.</p></div>
+          </div>
+          <div class="caps">
+            <h4>Actual capabilities</h4>
+            <ul>
+              <li>Duplicate prevention using unique user IDs</li>
+              <li>Lead status, follow-up counts, and timestamps maintained in Google Sheets</li>
+              <li>Follow-up scheduling and lifecycle tracking</li>
+            </ul>
+          </div>
+          <div class="tech"><span>n8n</span><span>OpenAI</span><span>Meta APIs</span><span>Instagram</span><span>Google Sheets</span></div>
+          <div class="card-extra" aria-hidden="true"><p>In the case study: deduplication by user ID, follow-up tracking, and error branches.</p></div>
+        </div>
+        <div class="project-foot">
+          <button class="link-btn" type="button" data-case="p2">View Case Study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <span class="note">Demonstrated handling: ~2 hours &rarr; ~2 minutes, project-specific.</span>
+        </div>
+      </article>
+
+      <article class="project-card reveal rv-left" data-cats="business-systems">
+        <div class="project-visual"><div class="mini-flow" aria-hidden="true"><span>WhatsApp Order</span><b>&rarr;</b><span class="hl">Menu Enquiry</span><b>&rarr;</b><span>Confirm Order</span><b>&rarr;</b><span class="hl">Order Record</span><b>&rarr;</b><span>Owner Notified</span></div></div>
+        <div class="project-body">
+          <div class="badges"><span class="badge badge-cat">Business Automation</span><span class="badge badge-status">Prototype / demonstration</span></div>
+          <h3>Hungry Habibi AI Restaurant Ordering System</h3>
+          <p>A WhatsApp-based ordering assistant that guides customers through menu enquiries, order confirmation, and structured order records.</p>
+          <div class="ps">
+            <div><b>Problem</b><p>Orders taken over chat meant scattered details, manual totals, and no single reliable record of what was ordered.</p></div>
+            <div><b>Solution</b><p><strong>A guided WhatsApp flow:</strong> menu answers, captured order details, calculated totals, a unique order ID, and an owner notification.</p></div>
+          </div>
+          <div class="caps">
+            <h4>Actual capabilities</h4>
+            <ul>
+              <li>Customer and phone-number extraction, structured order records, unique order IDs</li>
+              <li>Order summaries with total calculations; cash-on-delivery and other configured payment options</li>
+              <li>Restaurant owner notifications on confirmed orders</li>
+            </ul>
+          </div>
+          <div class="tech"><span>n8n</span><span>WhatsApp Cloud API</span><span>AI models</span><span>Google Sheets</span></div>
+          <div class="card-extra" aria-hidden="true"><p>In the case study: what is prototype, what is planned, and what is not claimed as live.</p></div>
+        </div>
+        <div class="project-foot">
+          <button class="link-btn" type="button" data-case="p3">View Case Study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <span class="note">Order tracking is a workflow concept — see case study.</span>
+        </div>
+      </article>
+
+      <article class="project-card reveal rv-right" data-cats="workflow-automation">
+        <div class="project-visual"><div class="mini-flow" aria-hidden="true"><span>Content Form</span><b>&rarr;</b><span class="hl">AI Generation</span><b>&rarr;</b><span>Caption + Hashtags</span><b>&rarr;</b><span>Publishing Workflow</span></div></div>
+        <div class="project-body">
+          <div class="badges"><span class="badge badge-cat">Content Automation</span><span class="badge badge-status">Generation tested</span></div>
+          <h3>AI Social Media Content Machine — ContentFlow AI</h3>
+          <p>A workflow that turns product and business information into structured social media content — captions, hashtag suggestions, and content ideas.</p>
+          <div class="ps">
+            <div><b>Problem</b><p>Creating consistent social content from scattered product details took repeated manual effort, with no standard structure.</p></div>
+            <div><b>Solution</b><p><strong>Structured input in, structured content out:</strong> a form captures the business, product, and image, and AI generation produces the caption set.</p></div>
+          </div>
+          <div class="caps">
+            <h4>Actual capabilities</h4>
+            <ul>
+              <li>Form-based input: business and product details plus product image</li>
+              <li>AI-generated captions, relevant hashtag suggestions, and content ideas</li>
+              <li>Instagram publishing workflow — requires configuration (see case study)</li>
+            </ul>
+          </div>
+          <div class="tech"><span>n8n</span><span>OpenAI</span><span>Webhooks</span><span>Instagram integrations</span></div>
+          <div class="card-extra" aria-hidden="true"><p>In the case study: tested generation features vs. publishing, which needs configuration.</p></div>
+        </div>
+        <div class="project-foot">
+          <button class="link-btn" type="button" data-case="p4">View Case Study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </div>
+      </article>
+
+      <article class="project-card reveal rv-left" data-cats="ai-agents">
+        <div class="project-visual"><div class="mini-flow" aria-hidden="true"><span>Incoming Call</span><b>&rarr;</b><span class="hl">Voice Agent</span><b>&rarr;</b><span>Conversation</span><b>&rarr;</b><span>Summary / Handoff</span></div></div>
+        <div class="project-body">
+          <div class="badges"><span class="badge badge-cat">AI Agents</span><span class="badge badge-concept">Concept / In Development</span></div>
+          <h3>AI Voice Call Agent</h3>
+          <p>A planned voice automation solution for conversational calling and customer interaction. This is a concept — not a completed production project.</p>
+          <div class="ps">
+            <div><b>Problem</b><p>Phone enquiries still need a conversational answer when chat-based automation isn&rsquo;t the channel a customer uses.</p></div>
+            <div><b>Solution</b><p><strong>Planned:</strong> a voice agent that handles a call conversationally, with a human handoff when it can&rsquo;t help.</p></div>
+          </div>
+          <div class="caps">
+            <h4>Planned scope</h4>
+            <ul>
+              <li>Conversational calling with intent handling</li>
+              <li>Call summary and human handoff on fallback</li>
+              <li>Integration with support and lead workflows</li>
+            </ul>
+          </div>
+          <div class="tech"><span>Twilio</span><span>Retell AI</span></div>
+          <div class="card-extra" aria-hidden="true"><p>In the case study: the planned architecture — honestly labelled as a concept.</p></div>
+        </div>
+        <div class="project-foot">
+          <button class="link-btn" type="button" data-case="p5">View Case Study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <span class="note">No working implementation is presented for this project.</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORKFLOW LAB ============ -->
+<section class="lab" id="lab">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="kicker">Interactive Workflow Lab</p>
+      <h2>Inside My Automation Workflows</h2>
+      <p>Pick a workflow, then select any node to see what it does, what goes in, and what it checks. This is a front-end demonstration of how the workflows are structured.</p>
+    </div>
+
+    <div class="lab-tabs" role="group" aria-label="Choose a workflow example">
+      <button class="lab-tab" type="button" data-lab="support" aria-pressed="true">Customer Support</button>
+      <button class="lab-tab" type="button" data-lab="lead" aria-pressed="false">Lead Management</button>
+      <button class="lab-tab" type="button" data-lab="restaurant" aria-pressed="false">Restaurant Ordering</button>
+    </div>
+
+    <div class="lab-progressbar" aria-hidden="true"><span id="labBarFill"></span></div>
+
+    <div class="lab-grid">
+      <div>
+        <div class="lab-nodes" id="labNodes" role="listbox" aria-label="Workflow nodes">
+          <div class="lab-progress" id="labProgress"></div>
+          <div class="lab-packet" id="labPacket" aria-hidden="true"></div>
+        </div>
+        <div class="lab-actions">
+          <button class="btn btn-primary btn-sm" id="playLab" type="button">Play flow</button>
+          <button class="btn btn-ghost btn-sm" id="stopLab" type="button">Pause</button>
+          <button class="btn btn-ghost btn-sm" id="resetLab" type="button">Reset</button>
+          <span class="lab-status" id="labStatus" aria-live="polite">Step 1 of 7 &middot; Demo</span>
+        </div>
+        <p class="lab-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M12 11v5"/></svg>
+          <span>Demonstration only. Selecting or playing a node does not run a real automation, send a message, or change any record.</span>
+        </p>
+      </div>
+      <div class="lab-detail" id="labDetail" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section id="experience">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="kicker">Experience &amp; Education</p>
+      <h2>Where I&rsquo;ve built, and what I&rsquo;ve studied</h2>
+    </div>
+
+    <div class="timeline" id="timeline">
+      <div class="timeline-progress" id="timelineProgress" aria-hidden="true"></div>
+      <div class="tl-item reveal rv-right">
+        <div class="tl-card">
+          <span class="when">January 2025 — Present</span>
+          <h3>AI Automation Engineer</h3>
+          <p class="org">Brands Wings</p>
+          <ul>
+            <li>Building and maintaining n8n workflows for live business processes.</li>
+            <li>Integrating Meta and WhatsApp Business APIs for messaging-based workflows.</li>
+            <li>Connecting AI models to business processes, including customer support and lead handling.</li>
+            <li>Automating lead handling and data management, with records kept consistent across tools.</li>
+            <li>Integrating Google Sheets and external services into end-to-end workflows.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item reveal rv-right">
+        <div class="tl-card tl-note">
+          <span class="when">Three months</span>
+          <h3>Internship</h3>
+          <p>Organisation, title, and dates for this internship were not supplied for this portfolio, so no details are shown here. They will be added once confirmed, rather than reconstructed from memory.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="edu-grid" data-parallax="8">
+      <article class="edu-card reveal">
+        <span class="when" style="font-size:12.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--emerald-dark)">Training &middot; Certificate</span>
+        <h3 style="margin-top:8px">AI Automation Engineering Certificate</h3>
+        <p class="where">Bano Qabil</p>
+        <p>Certificate programme in AI automation engineering — workflow design, AI integration, and applied automation.</p>
+      </article>
+      <article class="edu-card reveal">
+        <span class="when" style="font-size:12.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--emerald-dark)">Education</span>
+        <h3 style="margin-top:8px">Two years completed</h3>
+        <p class="where">Aisha Bawany Degree College</p>
+        <p>Two years of study completed. No completed degree is claimed here.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="alt" id="process">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="kicker">Work Process</p>
+      <h2>How I Build Automation Systems</h2>
+    </div>
+    <div class="process-grid" data-stagger>
+      <article class="pstep reveal rv-scale" style="--d:0s"><div class="num">01</div><h3>Discover</h3><p>Understand the business problem and the existing workflow — who does what today, where time is lost, and what must never be automated away.</p></article>
+      <article class="pstep reveal rv-scale" style="--d:.12s"><div class="num">02</div><h3>Design</h3><p>Map the automation architecture, integrations, and data flow — including the validation checks and the fallback when something is unknown.</p></article>
+      <article class="pstep reveal rv-scale" style="--d:.24s"><div class="num">03</div><h3>Build &amp; Test</h3><p>Implement the workflows, validate API responses, test edge cases, and handle errors — so failures are visible instead of silent.</p></article>
+      <article class="pstep reveal rv-scale" style="--d:.36s"><div class="num">04</div><h3>Optimize</h3><p>Improve reliability, maintainability, and business usability — clearer records, fewer manual steps, and a system the team can actually run.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact">
+  <div class="container contact-grid">
+    <div class="reveal rv-left">
+      <p class="kicker">Contact</p>
+      <h2>Have a Workflow Worth Automating?</h2>
+      <p class="lead">Let&rsquo;s discuss how AI and automation can simplify your business processes.</p>
+      <div class="contact-lines">
+        <a href="mailto:krrishkishore195@gmail.com">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+          <span><small>Email</small><strong>krrishkishore195@gmail.com</strong></span>
+        </a>
+        <div>
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <span><small>Location</small><strong>Karachi, Pakistan</strong></span>
+        </div>
+        <div>
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <span><small>Availability</small><strong>Enquire for current capacity — availability is confirmed by email, not assumed here.</strong></span>
+        </div>
+      </div>
+      <div class="include">
+        <h3>Helpful to include in your message</h3>
+        <ul>
+          <li>What the manual process looks like today</li>
+          <li>Which tools you already use (WhatsApp, Sheets, CRM, and so on)</li>
+          <li>What a good result would look like for your team</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="form-card reveal rv-right" id="formCard">
+      <h3>Start a conversation</h3>
+      <p>This form has no back end. It prepares an email draft in your own email app — nothing is sent from this page until you send it there.</p>
+      <div class="form-error" id="formError" role="alert"></div>
+      <form id="contactForm" novalidate>
+        <div class="field" id="f-name">
+          <label for="cfName">Name <span aria-hidden="true">*</span></label>
+          <input id="cfName" name="name" type="text" autocomplete="name" required />
+          <p class="err">Please enter your name.</p>
+        </div>
+        <div class="field" id="f-email">
+          <label for="cfEmail">Email <span aria-hidden="true">*</span></label>
+          <input id="cfEmail" name="email" type="email" autocomplete="email" required />
+          <p class="err">Please enter a valid email address.</p>
+        </div>
+        <div class="field" id="f-type">
+          <label for="cfType">Project type <span aria-hidden="true">*</span></label>
+          <select id="cfType" name="type" required>
+            <option value="">Select a project type…</option>
+            <option>AI agent / chatbot</option>
+            <option>Customer support automation</option>
+            <option>Lead management automation</option>
+            <option>Restaurant / business automation</option>
+            <option>Content automation</option>
+            <option>Voice agent</option>
+            <option>Job / internship enquiry</option>
+            <option>Other</option>
+          </select>
+          <p class="err">Please choose a project type.</p>
+        </div>
+        <div class="field" id="f-message">
+          <label for="cfMessage">Message <span aria-hidden="true">*</span></label>
+          <textarea id="cfMessage" name="message" required placeholder="Tell me about the workflow you&rsquo;d like to automate…"></textarea>
+          <p class="err">Please write a short message (at least 20 characters).</p>
+        </div>
+        <div class="hp" aria-hidden="true">
+          <label for="cfCompany">Company (leave blank)</label>
+          <input id="cfCompany" name="company" type="text" tabindex="-1" autocomplete="off" />
+        </div>
+        <button class="btn btn-primary" id="contactSubmit" type="submit" style="width:100%">Prepare email draft</button>
+        <p style="font-size:13px;color:var(--faint);margin-top:12px;text-align:center">Your email app will open with the message pre-filled. You review and send it.</p>
+      </form>
+      <div class="form-status" id="formStatus" role="status">
+        <h4>Email draft ready</h4>
+        <p>Your email app should have opened with a draft to <strong>krrishkishore195@gmail.com</strong>. Nothing was sent from this page — sending happens in your email app. If it didn&rsquo;t open, use the buttons below.</p>
+        <div class="row">
+          <a class="btn btn-dark btn-sm" id="reopenDraft" href="mailto:krrishkishore195@gmail.com">Open email app</a>
+          <button class="btn btn-outline btn-sm" id="copyEmailBtn" type="button">Copy email address</button>
+          <span id="copyDone" style="font-size:13px;font-weight:700;color:var(--forest);align-self:center"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <h3>Krrish Kishore — AI Automation Engineer</h3>
+        <p>Building practical AI systems and intelligent workflows.</p>
+      </div>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; <span id="year">2026</span> Krrish Kishore. All rights reserved.</span>
+      <a href="mailto:krrishkishore195@gmail.com">krrishkishore195@gmail.com</a>
+      <span>Karachi, Pakistan</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ CASE STUDY MODAL ============ -->
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" id="modalBox">
+    <div class="modal-head">
+      <button class="modal-close" id="modalClose" type="button" aria-label="Close case study">&times;</button>
+      <div class="badges" id="modalBadges"></div>
+      <h3 id="modalTitle"></h3>
+      <p id="modalDesc"></p>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+"use strict";
+var EMAIL="krrishkishore195@gmail.com";
+var REDUCED=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+document.documentElement.classList.add("js");
+var FINE=window.matchMedia("(pointer: fine)").matches;
+
+/* ---------- Scroll engine: progress bar, header state, timeline draw, parallax ---------- */
+var progressBar=document.getElementById("scrollProgressBar"),
+    headerEl=document.getElementById("siteHeader"),
+    timelineEl=document.getElementById("timeline"),
+    parallaxEls=document.querySelectorAll("[data-parallax]"),
+    scrollTicking=false;
+function scrollFrame(){
+  scrollTicking=false;
+  var y=window.scrollY||window.pageYOffset;
+  var max=document.documentElement.scrollHeight-window.innerHeight;
+  if(progressBar)progressBar.style.width=(max>0?Math.min(100,Math.max(0,(y/max)*100)):0)+"%";
+  if(headerEl)headerEl.classList.toggle("scrolled",y>8);
+  if(timelineEl){
+    var r=timelineEl.getBoundingClientRect(),vh=window.innerHeight||1;
+    var prog=(vh*0.82-r.top)/(r.height+vh*0.18);
+    timelineEl.style.setProperty("--tl",Math.min(1,Math.max(0,prog)).toFixed(3));
+  }
+  if(!REDUCED&&FINE&&window.innerWidth>960){
+    var vh2=window.innerHeight||1;
+    parallaxEls.forEach(function(el){
+      var rr=el.getBoundingClientRect();
+      if(rr.bottom<-80||rr.top>vh2+80)return;
+      var amt=parseFloat(el.getAttribute("data-parallax"))||8;
+      var off=Math.max(-amt,Math.min(amt,((rr.top+rr.height/2-vh2/2)/vh2)*-amt));
+      el.style.transform="translateY("+off.toFixed(1)+"px)";
+    });
+  }
+}
+function requestScroll(){if(!scrollTicking){scrollTicking=true;requestAnimationFrame(scrollFrame);}}
+window.addEventListener("scroll",requestScroll,{passive:true});
+window.addEventListener("resize",requestScroll,{passive:true});
+requestScroll();
+
+/* Scrollspy: active nav indicator */
+(function(){
+  var links=document.querySelectorAll(".nav-links a[href^='#']");
+  if(!links.length||!("IntersectionObserver" in window))return;
+  var map={};
+  links.forEach(function(a){map[a.getAttribute("href").slice(1)]=a;});
+  var spy=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting&&map[e.target.id]){
+        links.forEach(function(a){a.classList.remove("active");a.removeAttribute("aria-current");});
+        map[e.target.id].classList.add("active");
+        map[e.target.id].setAttribute("aria-current","true");
+      }
+    });
+  },{rootMargin:"-38% 0px -56% 0px",threshold:0});
+  ["home","about","skills","projects","experience","contact"].forEach(function(id){
+    var el=document.getElementById(id);if(el)spy.observe(el);
+  });
+})();
+
+/* ---------- Mobile menu ---------- */
+var menuBtn=document.getElementById("menuBtn"),mobileMenu=document.getElementById("mobileMenu");
+menuBtn.addEventListener("click",function(){
+  var open=mobileMenu.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded",open?"true":"false");
+  menuBtn.setAttribute("aria-label",open?"Close menu":"Open menu");
+});
+mobileMenu.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){
+  mobileMenu.classList.remove("open");menuBtn.setAttribute("aria-expanded","false");
+});});
+
+/* ---------- Reveal on scroll ---------- */
+var revealEls=document.querySelectorAll(".reveal");
+function revealAll(){revealEls.forEach(function(el){el.classList.add("in");});}
+var hasScrolled=false,safetyTimer=null;
+if("IntersectionObserver" in window && !REDUCED){
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});
+  },{threshold:0.08,rootMargin:"0px 0px 30% 0px"});
+  revealEls.forEach(function(el){io.observe(el);});
+  /* Safety net only for a capture that never scrolls: cancelled the
+     moment the visitor scrolls, so real scrolling still animates. */
+  safetyTimer=setTimeout(function(){if(!hasScrolled)revealAll();},1500);
+  window.addEventListener("scroll",function(){hasScrolled=true;if(safetyTimer)clearTimeout(safetyTimer);},{passive:true,once:true});
+}else{revealAll();}
+/* Process connector draws when the section arrives */
+(function(){
+  var ps=document.getElementById("process");
+  if(ps&&"IntersectionObserver" in window){
+    var pio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){ps.classList.add("in-view");pio.disconnect();}});},{threshold:0.25});
+    pio.observe(ps);
+  }else if(ps){ps.classList.add("in-view");}
+})();
+
+/* ---------- Footer year ---------- */
+document.getElementById("year").textContent=new Date().getFullYear();
+
+/* ---------- Hero demo flow: looping, pausable, resettable ---------- */
+var heroSteps=[
+  {id:"hn-whatsapp",path:null,log:"WhatsApp — customer message received."},
+  {id:"hn-n8n",path:"ln-wa-n8n",log:"n8n — webhook triggered, message routed."},
+  {id:"hn-agent",path:"ln-n8n-agent",log:"AI Agent — intent detected; checking knowledge & records."},
+  {id:"hn-supabase",path:"ln-agent-supabase",log:"Supabase — vector search returns the relevant answer."},
+  {id:"hn-sheets",path:"ln-agent-sheets",log:"Google Sheets — record checked / updated."},
+  {id:"hn-crm",path:"ln-agent-crm",log:"CRM — lead & order context confirmed."},
+  {id:"hn-whatsapp",path:"ln-reply",log:"WhatsApp — validated reply sent to the customer."}
+];
+var heroLog=document.getElementById("heroLog"),heroStatus=document.getElementById("heroStatus"),
+    heroBtn=document.getElementById("runHeroDemo"),heroPacket=document.getElementById("heroPacket"),
+    flowCard=document.getElementById("flowCard"),
+    heroTimer=null,heroPacketRaf=null,heroRunning=false,heroUserPaused=false,
+    heroWasRunning=false,heroVisible=true,heroAutoStarted=false,heroIdx=0;
+var STEP_MS=1150;
+function heroSetStatus(text,running){
+  if(!heroStatus)return;
+  heroStatus.textContent=text;
+  heroStatus.classList.toggle("running",!!running);
+}
+function heroStopPacket(){
+  if(heroPacketRaf)cancelAnimationFrame(heroPacketRaf);
+  heroPacketRaf=null;
+  if(heroPacket)heroPacket.classList.remove("on");
+}
+function heroMovePacket(pathId,dur){
+  var path=document.getElementById(pathId);
+  if(!path||!heroPacket||REDUCED)return;
+  var len=path.getTotalLength(),t0=null;
+  heroPacket.classList.add("on");
+  function frame(t){
+    if(t0===null)t0=t;
+    var pr=Math.min(1,(t-t0)/dur),pt=path.getPointAtLength(len*pr);
+    heroPacket.setAttribute("cx",pt.x);heroPacket.setAttribute("cy",pt.y);
+    if(pr<1)heroPacketRaf=requestAnimationFrame(frame);
+    else heroPacket.classList.remove("on");
+  }
+  heroPacketRaf=requestAnimationFrame(frame);
+}
+function heroShowStep(i){
+  heroIdx=i;
+  var nodes=document.querySelectorAll(".flow-node");
+  nodes.forEach(function(n){n.classList.add("dim");n.classList.remove("active");});
+  var el=document.getElementById(heroSteps[i].id);
+  if(el){el.classList.remove("dim");el.classList.add("active");}
+  var d=document.createElement("div");d.textContent="› "+heroSteps[i].log;heroLog.appendChild(d);
+  while(heroLog.children.length>5)heroLog.removeChild(heroLog.firstChild);
+  if(heroSteps[i].path)heroMovePacket(heroSteps[i].path,700);
+}
+function heroClearTimers(){if(heroTimer){clearTimeout(heroTimer);heroTimer=null;}heroStopPacket();}
+function heroLoopStep(i){
+  if(!heroRunning)return;
+  heroShowStep(i);
+  if(i<heroSteps.length-1){
+    heroTimer=setTimeout(function(){heroLoopStep(i+1);},STEP_MS);
+  }else{
+    heroTimer=setTimeout(function(){
+      if(!heroRunning)return;
+      var done=document.createElement("div");
+      done.innerHTML='<span class="ok">✓ Demo complete — looping. Illustration only, no real workflow ran.</span>';
+      heroLog.appendChild(done);
+      heroTimer=setTimeout(function(){
+        if(!heroRunning)return;
+        heroLog.innerHTML="";
+        heroLoopStep(0);
+      },1300);
+    },STEP_MS);
+  }
+}
+function heroPlay(){
+  if(heroRunning)return;
+  heroRunning=true;heroUserPaused=false;
+  heroSetStatus("Demo · Running",true);
+  heroBtn.textContent="Pause demo";heroBtn.setAttribute("aria-pressed","true");
+  if(heroIdx>=heroSteps.length)heroIdx=0;
+  if(heroLog.children.length===0)heroLog.innerHTML="";
+  heroLoopStep(heroIdx);
+}
+function heroPause(manual){
+  if(!heroRunning&&!heroTimer)return;
+  heroRunning=false;heroClearTimers();
+  if(manual)heroUserPaused=true;
+  heroSetStatus("Demo · Paused",false);
+  heroBtn.textContent="Play demo";heroBtn.setAttribute("aria-pressed","false");
+}
+function heroReset(){
+  heroRunning=false;heroUserPaused=true;heroClearTimers();heroIdx=0;
+  document.querySelectorAll(".flow-node").forEach(function(n){n.classList.remove("active","dim");});
+  heroLog.innerHTML='<div>› Ready. Press <span class="ok">Play demo</span> to walk through the diagram.</div>';
+  heroSetStatus("Demo · Ready",false);
+  heroBtn.textContent="Play demo";heroBtn.setAttribute("aria-pressed","false");
+}
+heroBtn.addEventListener("click",function(){if(heroRunning)heroPause(true);else heroPlay();});
+document.getElementById("resetHeroDemo").addEventListener("click",heroReset);
+if("IntersectionObserver" in window){
+  var heroObs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      heroVisible=e.isIntersecting;
+      if(flowCard)flowCard.classList.toggle("is-offscreen",!e.isIntersecting);
+      if(!e.isIntersecting){
+        if(heroRunning){heroWasRunning=true;heroPause(false);}
+      }else{
+        if(heroWasRunning&&!heroUserPaused){heroWasRunning=false;heroPlay();}
+        else if(!heroAutoStarted&&!REDUCED&&!heroUserPaused){
+          heroAutoStarted=true;
+          setTimeout(function(){if(heroVisible&&!heroUserPaused&&!heroRunning)heroPlay();},900);
+        }
+      }
+    });
+  },{threshold:0.15});
+  var heroSec=document.getElementById("home");if(heroSec)heroObs.observe(heroSec);
+}
+
+/* ---------- Project filters ---------- */
+var filterBtns=document.querySelectorAll(".filter-btn");
+var cards=document.querySelectorAll(".project-card");
+filterBtns.forEach(function(btn){
+  btn.addEventListener("click",function(){
+    filterBtns.forEach(function(b){b.setAttribute("aria-pressed","false");});
+    btn.setAttribute("aria-pressed","true");
+    var f=btn.getAttribute("data-filter");
+    cards.forEach(function(card){
+      var show=(f==="all")||card.getAttribute("data-cats").split(" ").indexOf(f)>-1;
+      card.classList.toggle("hidden",!show);
+    });
+  });
+});
+
+/* ---------- Case study data ---------- */
+var CASES={
+p1:{
+  title:"AI Customer Support Automation System",
+  badges:'<span class="badge badge-cat">AI Agents / RAG</span><span class="badge badge-status">Built workflow</span>',
+  desc:"An AI-powered customer support workflow that retrieves relevant information from a knowledge base to answer customer questions about products, prices, delivery, returns, cancellations, and order updates.",
+  legend:'<span class="impl">Implemented</span><span>Demonstration scope — no production deployment is claimed</span>',
+  sections:[
+    {n:"01",t:"Overview",body:"<p>Customers message on WhatsApp and get answers grounded in the business\u2019s own knowledge base, with order actions gated by validation. The workflow combines <strong>Retrieval-Augmented Generation (RAG)</strong>, order lookup, and a human fallback in a single n8n flow.</p>"},
+    {n:"02",t:"Business problem",body:"<p>Support teams answer the same questions repeatedly, and answers vary depending on who replies. Order changes are riskier still: cancelling or changing an order without checking its status or the customer\u2019s identity can create errors that are hard to undo.</p>"},
+    {n:"03",t:"Project objectives",list:["Answer product, price, delivery, return, cancellation, and order-update questions from retrieved knowledge — not from the model\u2019s memory.","Handle English and Roman Urdu responses.","Look up orders and enforce status rules before any change.","Validate the customer and the order before sensitive actions.","Fall back to human support when the answer is unavailable, instead of guessing."]},
+    {n:"04",t:"System architecture",body:"<p>WhatsApp trigger &rarr; webhook &rarr; intent detection &rarr; branch: <strong>order lookup</strong> (Supabase / PostgreSQL) or <strong>knowledge retrieval</strong> (document embeddings + vector search) &rarr; AI response generation from retrieved context &rarr; validation &rarr; WhatsApp reply, with a human-fallback branch for unanswered questions.</p>"},
+    {n:"05",t:"Tools and integrations",list:["<strong>n8n</strong> — workflow orchestration, branching, and error handling.","<strong>OpenAI</strong> — response generation and document embeddings.","<strong>Supabase / PostgreSQL</strong> — order data and vector search.","<strong>WhatsApp integrations</strong> — customer messaging."]},
+    {n:"06",t:"Workflow diagram",diagram:["Customer Message","Intent Detection","Order Lookup or Knowledge Retrieval","Validation & Status Checks","AI Response","Customer Reply"]},
+    {n:"07",t:"Implementation details",list:["Knowledge documents are embedded and searched by vector similarity, so replies are built from retrieved passages.","Prompts require the model to stay within the retrieved context.","Roman Urdu and English are handled in the same flow, matching the customer\u2019s language.","Cancellation logic checks order status: only pending orders can be cancelled.","Address updates pass validation before any record is changed.","Customer and order validation runs before every sensitive change."]},
+    {n:"08",t:"Validation and error handling",list:["<strong>Unknown question</strong> &rarr; no guessed answer; the customer is routed to human support.","<strong>Order not found / details don\u2019t match</strong> &rarr; no change is made; the customer is asked for the missing details.","<strong>Non-pending order</strong> &rarr; cancellation is refused with an explanation of the status.","<strong>API or lookup failure</strong> &rarr; error branch — no silent or partial reply.","<strong>Empty retrieval</strong> &rarr; treated as unanswered and escalated, not invented."]},
+    {n:"09",t:"Testing performed",body:"<p>Checked during development with sample enquiries across the supported topics, order-status and cancellation scenarios (pending and non-pending), valid and invalid address updates, and English and Roman Urdu phrasing — plus the error paths above. No test counts or pass rates are claimed, because none were recorded as a formal test suite.</p>"},
+    {n:"10",t:"Results and limitations",list:["The workflow demonstrates the full loop: question &rarr; retrieval or lookup &rarr; validated reply or human fallback.","<strong>Limitation:</strong> deployment to real customers or production-scale usage is not claimed. The knowledge base only covers the documents supplied to it.","<strong>Limitation:</strong> no performance, accuracy, or cost metrics are claimed."]},
+    {n:"11",t:"Future improvements",list:["Broaden the knowledge base and keep it updated as products and policies change.","Add more order actions behind the same validation pattern.","Add a human-handoff queue so escalations are tracked, not just sent.","Add logging and review of fallback cases to improve the knowledge base."]}
+  ]
+},
+p2:{
+  title:"AI Lead Management Automation",
+  badges:'<span class="badge badge-cat">Workflow Automation</span><span class="badge badge-status">Built workflow</span>',
+  desc:"An automated lead-management system designed to organise incoming social media enquiries and maintain lead status throughout the follow-up process.",
+  legend:'<span class="impl">Implemented</span><span>Demonstration scope — no named client deployment is claimed</span>',
+  sections:[
+    {n:"01",t:"Overview",body:"<p>Instagram DMs flow into a single workflow that identifies each lead, prevents duplicates, drafts an AI-assisted reply, and keeps the lead\u2019s status, follow-up count, and timestamps in Google Sheets.</p>"},
+    {n:"02",t:"Business problem",body:"<p>Enquiries arriving as social media messages are easy to miss, easy to answer twice, and hard to follow up on. Without one record per lead, follow-up depends on memory — and leads quietly go cold.</p>"},
+    {n:"03",t:"Project objectives",list:["Capture and process every incoming enquiry.","Identify leads using unique user IDs.","Prevent duplicate lead records.","Generate AI-assisted replies.","Maintain lead status in Google Sheets.","Track follow-up counts and timestamps, and support follow-up scheduling and lifecycle management."]},
+    {n:"04",t:"System architecture",body:"<p>Instagram DM &rarr; webhook &rarr; lead identification by unique user ID &rarr; existing-record check in Google Sheets &rarr; AI-assisted reply &rarr; record update &rarr; follow-up logic.</p>"},
+    {n:"05",t:"Tools and integrations",list:["<strong>n8n</strong> — workflow orchestration.","<strong>OpenAI</strong> — AI-assisted reply generation.","<strong>Meta APIs / Instagram</strong> — incoming enquiries.","<strong>Google Sheets</strong> — the lead record: status, follow-up counts, timestamps."]},
+    {n:"06",t:"Workflow diagram",diagram:["Incoming DM","Identify Lead","Check Existing Record","AI Response","Update Lead Record","Follow-up Logic"]},
+    {n:"07",t:"Implementation details",list:["Each lead is keyed by a unique user ID, so a returning enquirer updates one record instead of creating another.","The existing-record check runs before any insert.","Lead status, follow-up count, and last-contact timestamp are written back to the same sheet row.","Follow-up scheduling and lifecycle stages are driven from the stored status and timestamps."]},
+    {n:"08",t:"Validation and error handling",list:["<strong>Duplicate enquiry</strong> &rarr; the existing record is updated; no second row is created.","<strong>Missing user ID</strong> &rarr; the enquiry is flagged rather than recorded as a new lead.","<strong>Sheet write failure</strong> &rarr; error branch, so a reply is never assumed to have been recorded.","<strong>API failure</strong> &rarr; the workflow fails visibly in n8n instead of dropping the enquiry silently."]},
+    {n:"09",t:"Testing performed",body:"<p>Checked during development with new leads, repeat enquiries from the same user, duplicate submissions, follow-up count increments, and timestamp updates. No formal test counts are claimed.</p>"},
+    {n:"10",t:"Results and limitations",list:["In the demonstrated workflow, handling an enquiry went from approximately <strong>two hours of manual work to about two minutes</strong>. That is a project-specific demonstration result — not a guaranteed outcome for any other business or volume.","<strong>Limitation:</strong> the result depends on Meta API access and configuration, and on the sheet structure staying consistent.","<strong>Limitation:</strong> no client, revenue, or conversion figures are claimed."]},
+    {n:"11",t:"Future improvements",list:["Sync leads to a CRM instead of Sheets as volume grows.","Add lead scoring based on enquiry content and engagement.","Add automated follow-up sequences with a clear opt-out.","Add reporting on response and follow-up performance."]}
+  ]
+},
+p3:{
+  title:"Hungry Habibi AI Restaurant Ordering System",
+  badges:'<span class="badge badge-cat">Business Automation</span><span class="badge badge-status">Prototype / demonstration</span>',
+  desc:"A WhatsApp-based restaurant ordering assistant designed to guide customers through menu enquiries, order confirmation, and order record management.",
+  legend:'<span class="impl">Implemented in the prototype</span><span class="plan">Planned / concept</span><span>No live deployment is claimed</span>',
+  sections:[
+    {n:"01",t:"Overview",body:"<p>A customer chats on WhatsApp: asks about the menu, builds an order, confirms it, and gets a summary with a total. The order is stored as a structured record with a unique order ID, and the restaurant owner is notified.</p>"},
+    {n:"02",t:"Business problem",body:"<p>Orders taken over chat leave details scattered across messages. Totals are worked out by hand, and there is no single reliable record of what was ordered, by whom, or for how much.</p>"},
+    {n:"03",t:"Project objectives",list:["Guide customers through menu enquiries and ordering in WhatsApp.","Capture structured order records with a unique order ID.","Calculate order summaries and totals consistently.","Support cash-on-delivery and other configured payment options.","Notify the restaurant owner on confirmed orders."]},
+    {n:"04",t:"System architecture",body:"<p>WhatsApp message &rarr; AI assistant (menu and order handling) &rarr; order capture and validation &rarr; total calculation &rarr; structured record in Google Sheets &rarr; owner notification. Order tracking is a workflow concept in this design, not a live feature.</p>"},
+    {n:"05",t:"Tools and integrations",list:["<strong>n8n</strong> — workflow orchestration.","<strong>WhatsApp Cloud API</strong> — customer conversations.","<strong>AI models</strong> — menu and order conversation.","<strong>Google Sheets</strong> — structured order records.","<strong>Restaurant integrations</strong> — as configured; see limitations."]},
+    {n:"06",t:"Workflow diagram",diagram:["WhatsApp Message","Menu Enquiry","Order Capture","Confirm & Calculate Total","Save Order Record","Owner Notification"]},
+    {n:"07",t:"Implementation details",list:["Customer details and phone number are extracted from the conversation.","Orders are stored as structured records with a unique order ID per order.","Order summaries and totals are calculated by the workflow, not typed by hand.","Payment options are limited to cash-on-delivery and other options as configured."]},
+    {n:"08",t:"Validation and error handling",list:["<strong>Incomplete order</strong> &rarr; the assistant asks for the missing item, quantity, or detail before confirming.","<strong>Total mismatch</strong> &rarr; totals are recalculated from the captured items.","<strong>Record-save failure</strong> &rarr; the order is not treated as confirmed; the error branch handles it.","<strong>Owner notification</strong> &rarr; sent only after the order is confirmed and recorded."]},
+    {n:"09",t:"Testing performed",body:"<p>Checked during development with menu enquiries, complete orders, incomplete orders needing clarification, and total calculations. Order tracking was reviewed as a design concept only and was not tested as a live feature.</p>"},
+    {n:"10",t:"Results and limitations",list:["The prototype demonstrates the full guided flow from enquiry to recorded, notified order.","<strong>Limitation:</strong> integrations and features are only as live as their configuration — order tracking, live menu or stock sync, and payment confirmation are concepts or planned work, not claimed as live.","<strong>Limitation:</strong> no real restaurant, order volume, or revenue figures are claimed."]},
+    {n:"11",t:"Future improvements",list:["Live menu and stock synchronisation.","Delivery-distance pricing and a customer-facing tracking link.","Payment confirmation for non-COD options.","A daily sales summary for the owner."]}
+  ]
+},
+p4:{
+  title:"AI Social Media Content Machine — ContentFlow AI",
+  badges:'<span class="badge badge-cat">Content Automation</span><span class="badge badge-status">Generation tested</span>',
+  desc:"A workflow designed to help businesses generate structured social media content from product or business information.",
+  legend:'<span class="impl">Generation tested</span><span class="plan">Publishing requires configuration</span>',
+  sections:[
+    {n:"01",t:"Overview",body:"<p>A form captures the business, the product, and optionally a product image. AI generation then produces structured content: captions, hashtag suggestions, and content ideas — ready for review before anything is published.</p>"},
+    {n:"02",t:"Business problem",body:"<p>Social content is usually created from scattered notes and photos, with no standard structure. Every post starts from a blank page, so output is inconsistent and slow to produce.</p>"},
+    {n:"03",t:"Project objectives",list:["Collect structured input through a form: business details, product details, and a product image.","Generate captions, hashtag suggestions, and content ideas from that input.","Keep the output structured and reviewable.","Provide an Instagram publishing workflow — gated on configuration."]},
+    {n:"04",t:"System architecture",body:"<p>Content form &rarr; webhook &rarr; AI content generation &rarr; caption and hashtag output &rarr; review &rarr; publishing workflow (requires Instagram configuration).</p>"},
+    {n:"05",t:"Tools and integrations",list:["<strong>n8n</strong> — workflow orchestration.","<strong>OpenAI</strong> — caption, hashtag, and idea generation.","<strong>Webhooks</strong> — form submission trigger.","<strong>Instagram integrations</strong> — publishing step; requires configuration."]},
+    {n:"06",t:"Workflow diagram",diagram:["Content Form","AI Content Generation","Caption and Hashtags","Review","Publishing Workflow"]},
+    {n:"07",t:"Implementation details",list:["Form fields capture business context, product details, and the product image so generation is grounded in supplied information.","Generation prompts use the submitted details rather than generic defaults.","Output is structured as caption text, hashtag suggestions, and content ideas.","The publishing step is kept separate from generation and only runs where Instagram access is configured."]},
+    {n:"08",t:"Validation and error handling",list:["<strong>Missing product details</strong> &rarr; the workflow surfaces the gap instead of generating from nothing.","<strong>Generation failure</strong> &rarr; error branch; no empty or partial post is passed forward.","<strong>Publishing not configured</strong> &rarr; the workflow stops at review-ready output; publishing is not attempted."]},
+    {n:"09",t:"Testing performed",body:"<p>Generation was tested with varied product and business inputs, checking that captions, hashtags, and ideas reflected the submitted details. The publishing step was only exercised where configuration allowed; it is not presented as a tested live publish.</p>"},
+    {n:"10",t:"Results and limitations",list:["Content generation features were tested and produce structured, input-grounded output.","<strong>Limitation:</strong> publishing features still require configuration and are not claimed as live.","<strong>Limitation:</strong> output quality depends on the detail supplied in the form; human review is recommended before posting.","<strong>Limitation:</strong> no engagement or growth metrics are claimed."]},
+    {n:"11",t:"Future improvements",list:["Brand-voice presets so output matches each business.","Scheduling, so approved content goes out at set times.","A feedback loop from posted content back into future generation.","Multi-platform output beyond Instagram."]}
+  ]
+},
+p5:{
+  title:"AI Voice Call Agent — Concept / In Development",
+  badges:'<span class="badge badge-cat">AI Agents</span><span class="badge badge-concept">Concept / In Development</span>',
+  desc:"A planned voice automation solution for conversational calling and customer interaction. No working implementation is presented here.",
+  legend:'<span class="plan">Concept / planned</span><span>Nothing on this page is claimed as built or tested</span>',
+  sections:[
+    {n:"01",t:"Overview",body:"<p><strong>This is a concept.</strong> The plan is a voice agent that answers calls conversationally, handles common enquiries, and hands off to a person when it cannot help — built on Twilio for telephony and Retell AI for the voice agent.</p>"},
+    {n:"02",t:"Business problem",body:"<p>Phone enquiries need a conversational answer at the moment a customer calls. Chat automation does not cover customers who prefer — or only have — a phone call.</p>"},
+    {n:"03",t:"Project objectives",list:["(Planned) Handle conversational calls naturally, with intent handling.","(Planned) Answer from the same grounded knowledge used by chat support.","(Planned) Hand off to a human with context when the agent cannot help.","(Planned) Log a call summary for follow-up."]},
+    {n:"04",t:"System architecture",body:"<p>(Planned) Incoming call via Twilio &rarr; Retell AI voice agent &rarr; intent and knowledge handling &rarr; action or lookup where configured &rarr; call summary and human handoff. This architecture is a design, not a running system.</p>"},
+    {n:"05",t:"Tools and integrations",list:["<strong>Twilio</strong> — telephony (planned).","<strong>Retell AI</strong> — conversational voice agent (planned).","Future integration with the support and lead workflows on this page (planned)."]},
+    {n:"06",t:"Workflow diagram",diagram:["Incoming Call","Greeting & Intent","Conversation","Action / Lookup (planned)","Summary & Handoff"]},
+    {n:"07",t:"Implementation details",body:"<p>No implementation is presented. Planned work starts with a call script for a single use case, a defined fallback to a human, and call-summary logging — before any broader rollout.</p>"},
+    {n:"08",t:"Validation and error handling",body:"<p>(Planned) The same rules as the support workflow: no guessed answers, a human fallback when the answer is unavailable, and visible handling of call failures — to be designed and tested before any live use.</p>"},
+    {n:"09",t:"Testing performed",body:"<p>None. There is no demo or test result to report for this concept, and none is implied.</p>"},
+    {n:"10",t:"Results and limitations",list:["<strong>Result:</strong> none claimed. This entry exists to show the direction of planned work, honestly labelled.","<strong>Limitation:</strong> voice quality, latency, cost, and telephony configuration are all untested for this concept."]},
+    {n:"11",t:"Future improvements",list:["Build a pilot for one use case and test it with scripted calls.","Measure fallback rate and call quality before expanding scope.","Connect call summaries to the lead and support records.","Add Roman Urdu voice handling, tested with real callers."]}
+  ]
+}
+};
+
+/* ---------- Modal ---------- */
+var backdrop=document.getElementById("modalBackdrop"),modalBox=document.getElementById("modalBox"),
+    modalTitle=document.getElementById("modalTitle"),modalDesc=document.getElementById("modalDesc"),
+    modalBadges=document.getElementById("modalBadges"),modalBody=document.getElementById("modalBody"),
+    lastFocus=null;
+function esc(s){return s;}
+function renderCase(id){
+  var c=CASES[id];if(!c)return;
+  modalTitle.textContent=c.title;modalDesc.textContent=c.desc;modalBadges.innerHTML=c.badges;
+  var html='<div class="legend">'+c.legend+'</div>';
+  c.sections.forEach(function(s){
+    html+='<section class="cs-section"><h4><span>'+s.n+'</span>'+s.t+'</h4>';
+    if(s.diagram){
+      html+='<div class="cs-diagram"><div class="mini-flow">';
+      s.diagram.forEach(function(step,i){
+        html+='<span'+(i===1||i===3?' class="hl"':'')+'>'+step+'</span>';
+        if(i<s.diagram.length-1)html+='<b>&rarr;</b>';
+      });
+      html+='</div></div>';
+    }
+    if(s.body)html+=s.body;
+    if(s.list){html+='<ul>';s.list.forEach(function(li){html+='<li>'+li+'</li>';});html+='</ul>';}
+    html+='</section>';
+  });
+  if(id==="p3"||id==="p4"||id==="p5"){
+    html+='<div class="cs-callout"><strong>Read this honestly:</strong> '+(id==="p5"?"this project is a concept. Nothing here is a working implementation, a demo, or a live deployment.":id==="p3"?"order tracking and some integrations are workflow concepts or planned work. They are not presented as live features.":"publishing requires Instagram configuration and is not presented as a tested live publish. Generation features were the part tested.")+'</div>';
+  }
+  modalBody.innerHTML=html;
+  modalBody.querySelectorAll(".cs-section").forEach(function(sec,i){
+    sec.classList.add("cs-anim");
+    sec.style.setProperty("--d",(i*45)+"ms");
+  });
+}
+function openCase(id,trigger){
+  lastFocus=trigger||document.activeElement;
+  renderCase(id);
+  backdrop.classList.remove("closing");
+  backdrop.classList.add("open");
+  document.body.style.overflow="hidden";
+  document.getElementById("modalClose").focus();
+  modalBox.scrollTop=0;backdrop.scrollTop=0;
+}
+function closeCase(){
+  if(!backdrop.classList.contains("open"))return;
+  if(REDUCED){
+    backdrop.classList.remove("open");
+    document.body.style.overflow="";
+    if(lastFocus&&lastFocus.focus)lastFocus.focus();
+    return;
+  }
+  backdrop.classList.add("closing");
+  setTimeout(function(){
+    backdrop.classList.remove("open","closing");
+    document.body.style.overflow="";
+    if(lastFocus&&lastFocus.focus)lastFocus.focus();
+  },190);
+}
+document.querySelectorAll("[data-case]").forEach(function(btn){
+  btn.addEventListener("click",function(){openCase(btn.getAttribute("data-case"),btn);});
+});
+document.getElementById("modalClose").addEventListener("click",closeCase);
+backdrop.addEventListener("click",function(e){if(e.target===backdrop)closeCase();});
+document.addEventListener("keydown",function(e){
+  if(e.key==="Escape"&&backdrop.classList.contains("open"))closeCase();
+  if(e.key==="Tab"&&backdrop.classList.contains("open")){
+    var focusables=modalBox.querySelectorAll("button,a[href]");
+    if(!focusables.length)return;
+    var first=focusables[0],last=focusables[focusables.length-1];
+    if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}
+    else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
+  }
+});
+
+
+/* ---------- Pointer effects (fine pointers only, motion-safe only) ---------- */
+if(FINE&&!REDUCED){
+  var heroSec2=document.querySelector(".hero"),heroGlow=document.getElementById("heroGlow"),
+      heroVisual=document.getElementById("heroVisual"),
+      floatChips=document.querySelectorAll(".float-chip");
+  if(heroSec2&&heroGlow&&heroVisual){
+    var tx=0,ty=0,cx=0,cy=0,glowRaf=null;
+    heroSec2.addEventListener("pointermove",function(e){
+      var r=heroSec2.getBoundingClientRect();
+      tx=e.clientX-r.left;ty=e.clientY-r.top;
+      if(!glowRaf)glowRaf=requestAnimationFrame(glowTick);
+    });
+    heroSec2.addEventListener("pointerleave",function(){
+      if(glowRaf)cancelAnimationFrame(glowRaf);glowRaf=null;
+      heroVisual.style.transform="";heroGlow.style.opacity="0";
+      floatChips.forEach(function(f){f.style.translate="";});
+    });
+    function glowTick(){
+      glowRaf=null;
+      cx+=(tx-cx)*0.14;cy+=(ty-cy)*0.14;
+      heroGlow.style.left=cx+"px";heroGlow.style.top=cy+"px";heroGlow.style.opacity="1";
+      var r=heroSec2.getBoundingClientRect();
+      var nx=(r.width?cx/r.width-0.5:0),ny=(r.height?cy/r.height-0.5:0);
+      heroVisual.style.transform="translate3d("+(nx*-8).toFixed(1)+"px,"+(ny*-6).toFixed(1)+"px,0)";
+      floatChips.forEach(function(f){
+        var d=parseFloat(f.getAttribute("data-depth"))||14;
+        f.style.translate=(nx*d).toFixed(1)+"px "+(ny*d).toFixed(1)+"px";
+      });
+      if(Math.abs(tx-cx)>0.6||Math.abs(ty-cy)>0.6)glowRaf=requestAnimationFrame(glowTick);
+    }
+  }
+  document.querySelectorAll(".magnetic").forEach(function(el){
+    el.addEventListener("pointermove",function(e){
+      var r=el.getBoundingClientRect();
+      var dx=(e.clientX-r.left-r.width/2)/r.width,dy=(e.clientY-r.top-r.height/2)/r.height;
+      el.style.transform="translate3d("+(dx*6).toFixed(1)+"px,"+(dy*5).toFixed(1)+"px,0)";
+    });
+    el.addEventListener("pointerleave",function(){el.style.transform="";});
+  });
+  document.querySelectorAll(".project-card").forEach(function(card){
+    card.addEventListener("pointermove",function(e){
+      if(card.classList.contains("hidden"))return;
+      var r=card.getBoundingClientRect();
+      var px=(e.clientX-r.left)/r.width,py=(e.clientY-r.top)/r.height;
+      card.style.setProperty("--mx",(px*100).toFixed(1)+"%");
+      card.style.setProperty("--my",(py*100).toFixed(1)+"%");
+      card.classList.add("tilting");
+      card.style.transform="perspective(900px) rotateX("+((0.5-py)*4).toFixed(2)+"deg) rotateY("+((px-0.5)*5).toFixed(2)+"deg) translateY(-3px)";
+    });
+    card.addEventListener("pointerleave",function(){card.classList.remove("tilting");card.style.transform="";});
+  });
+}
+
+/* ---------- Workflow Lab ---------- */
+var LAB={
+support:{label:"Customer Support",nodes:[
+  {t:"WhatsApp Message",s:"The trigger",d:"A customer sends a message on WhatsApp. Nothing is assumed about what they want yet — the workflow starts by listening.",pts:["Trigger: incoming WhatsApp message","Input: message text and sender details","Output: raw message passed to routing"]},
+  {t:"Webhook",s:"n8n receives it",d:"The message arrives in n8n through a webhook, so the workflow runs the moment the message exists — no polling, no manual check.",pts:["Trigger: webhook event","Validation: payload has message + sender","On failure: the event is logged, not dropped silently"]},
+  {t:"Intent Detection",s:"What does the customer want?",d:"The workflow classifies the message: is this a product question, an order update, a cancellation, or something else? The branch taken next depends on this answer.",pts:["Decides the branch: order action or knowledge question","Unclear intent is treated as unanswered, not guessed"]},
+  {t:"AI Agent",s:"Grounded reasoning",d:"The agent works from retrieved context only. It does not answer from memory, and it is instructed to say when it does not know.",pts:["Receives: intent + retrieved context","Rule: no answer without retrieved support","Output: draft reply + the evidence it used"]},
+  {t:"Supabase Vector Search",s:"Find the real answer",d:"Knowledge documents are searched by meaning, not keywords. Embeddings return the passages most relevant to the question.",pts:["Input: the customer\u2019s question as an embedding","Output: relevant knowledge passages","Empty result means: escalate, don\u2019t invent"]},
+  {t:"Response Validation",s:"Checks before sending",d:"Before anything reaches the customer, the reply is checked: is it supported by the retrieval, and have order rules been applied? Order changes also re-check status and identity here.",pts:["Cancellation: pending orders only","Address change: validation before any update","Sensitive change: customer + order validated first"]},
+  {t:"WhatsApp Reply",s:"Back to the customer",d:"The validated reply is sent on WhatsApp. If validation failed or no answer was found, the customer is routed to human support instead.",pts:["Success: validated reply sent","Fallback: human support, with the conversation context"]}
+]},
+lead:{label:"Lead Management",nodes:[
+  {t:"Instagram DM",s:"The enquiry arrives",d:"A potential customer sends a direct message on Instagram. The workflow treats every DM as a possible lead until it is identified.",pts:["Trigger: incoming Instagram DM","Input: message + sender user ID"]},
+  {t:"Lead Identification",s:"Who is this?",d:"The sender is identified by their unique user ID. That ID is the key — it is what stops one person becoming three leads.",pts:["Key: unique user ID","No ID: enquiry flagged, not recorded as a lead"]},
+  {t:"Google Sheets",s:"One record per lead",d:"The sheet is checked for an existing record. A returning enquirer updates their row; a new enquirer gets exactly one new row.",pts:["Check: existing record by user ID","Duplicate: update, never insert a second row","Fields: status, follow-up count, timestamps"]},
+  {t:"AI Reply",s:"Assisted, not automatic",d:"An AI-assisted reply is generated from the enquiry and the lead\u2019s history, so returning leads are not treated as strangers.",pts:["Input: enquiry + existing record","Output: reply draft for the conversation"]},
+  {t:"Follow-up Tracking",s:"Nothing goes cold quietly",d:"Follow-up counts and timestamps are updated on every touch, and follow-up scheduling is driven from the stored status — so the next step is always visible.",pts:["Tracked: follow-up count + last-contact time","Scheduling: driven by status and timestamps","Lifecycle: stages managed in the same record"]}
+]},
+restaurant:{label:"Restaurant Ordering",nodes:[
+  {t:"WhatsApp Message",s:"Customer starts the order",d:"The customer messages the restaurant on WhatsApp — a menu question, an order, or both. The assistant guides rather than waiting for a perfect message.",pts:["Trigger: incoming WhatsApp message","Handles: menu enquiries and orders in one flow"]},
+  {t:"Menu Enquiry",s:"What\u2019s available?",d:"The assistant answers menu and item questions from the configured menu information, so customers can decide before they order.",pts:["Input: item or category question","Output: menu information for that item"]},
+  {t:"Order Capture",s:"Details, structured",d:"Customer details and phone number are extracted, and items with quantities are captured as a structured order — not as free text to decode later.",pts:["Captured: customer, phone number, items, quantities","Incomplete order: assistant asks for what\u2019s missing"]},
+  {t:"Order ID & Total",s:"Calculated, not typed",d:"A unique order ID is generated and the total is calculated from the captured items. The customer sees a summary and confirms it before anything is recorded as final.",pts:["Unique order ID per order","Total calculated by the workflow","Confirmation required before recording"]},
+  {t:"Google Sheets Record",s:"One reliable record",d:"The confirmed order is saved as a structured record in Google Sheets — the single source of truth the restaurant works from.",pts:["Record: order ID, customer, items, total, payment option","Save failure: order is not treated as confirmed"]},
+  {t:"Owner Notification",s:"The kitchen knows",d:"The restaurant owner is notified only after the order is confirmed and recorded, with the summary and total included.",pts:["Sent after: confirmation + successful record save","Includes: order summary and total"]}
+]}
+};
+var labNodesEl=document.getElementById("labNodes"),labDetail=document.getElementById("labDetail"),
+    labProgress=document.getElementById("labProgress"),currentLab="support",currentNode=0,labTimer=null;
+var labInteracted=false,labSeen=false;
+function renderLab(key){
+  currentLab=key;currentNode=0;stopLabPlay();
+  labNodesEl.classList.remove("switching");
+  void labNodesEl.offsetWidth;
+  labNodesEl.classList.add("switching");
+  labNodesEl.querySelectorAll(".lab-node").forEach(function(n){n.remove();});
+  LAB[key].nodes.forEach(function(node,i){
+    var b=document.createElement("button");
+    b.type="button";b.className="lab-node";b.setAttribute("role","option");
+    b.setAttribute("aria-selected",i===0?"true":"false");
+    b.innerHTML='<span class="n" aria-hidden="true"></span><span><span class="step">STEP '+(i+1)+' OF '+LAB[key].nodes.length+'</span><strong>'+node.t+'</strong><small>'+node.s+'</small></span>';
+    b.addEventListener("click",function(){selectLabNode(i);});
+    labNodesEl.appendChild(b);
+  });
+  selectLabNode(0);
+}
+function selectLabNode(i){
+  currentNode=i;
+  var btns=labNodesEl.querySelectorAll(".lab-node");
+  btns.forEach(function(b,j){
+    b.classList.toggle("active",j===i);
+    b.setAttribute("aria-selected",j===i?"true":"false");
+  });
+  var node=LAB[currentLab].nodes[i],total=LAB[currentLab].nodes.length;
+  labProgress.style.height=(total>1?(i/(total-1))*100:0)+"%";
+  var bar=document.getElementById("labBarFill");
+  if(bar)bar.style.width=((i+1)/total*100)+"%";
+  var st=document.getElementById("labStatus");
+  if(st)st.textContent="Step "+(i+1)+" of "+total+" · Demo";
+  var pkt=document.getElementById("labPacket");
+  if(pkt&&btns[i])pkt.style.top=(btns[i].offsetTop+btns[i].offsetHeight/2)+"px";
+  var pts=node.pts.map(function(p){return "<li>"+p+"</li>";}).join("");
+  labDetail.innerHTML='<p class="step">STEP '+(i+1)+' OF '+total+' &middot; '+LAB[currentLab].label.toUpperCase()+'</p><h3>'+node.t+'</h3><p>'+node.d+'</p><ul>'+pts+'</ul>';
+  labDetail.classList.remove("detail-anim");
+  void labDetail.offsetWidth;
+  labDetail.classList.add("detail-anim");
+}
+function stopLabPlay(){if(labTimer){clearInterval(labTimer);labTimer=null;}}
+document.querySelectorAll(".lab-tab").forEach(function(tab){
+  tab.addEventListener("click",function(){
+    document.querySelectorAll(".lab-tab").forEach(function(t){t.setAttribute("aria-pressed","false");});
+    tab.setAttribute("aria-pressed","true");
+    renderLab(tab.getAttribute("data-lab"));
+  });
+});
+document.getElementById("playLab").addEventListener("click",function(){
+  labInteracted=true;
+  if(labTimer)return;
+  if(currentNode>=LAB[currentLab].nodes.length-1)selectLabNode(0);
+  var total=LAB[currentLab].nodes.length;
+  labTimer=setInterval(function(){
+    var next=(currentNode+1)%total;selectLabNode(next);
+    if(next===total-1)stopLabPlay();
+  },1600);
+});
+document.getElementById("stopLab").addEventListener("click",function(){labInteracted=true;stopLabPlay();});
+document.getElementById("resetLab").addEventListener("click",function(){
+  labInteracted=true;stopLabPlay();selectLabNode(0);
+});
+renderLab("support");
+/* Play once when the Lab scrolls into view; pause when it leaves. */
+if("IntersectionObserver" in window){
+  var labSec=document.getElementById("lab");
+  if(labSec){
+    var labObs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          if(!labSeen){
+            labSeen=true;
+            if(!REDUCED&&!labInteracted)document.getElementById("playLab").click();
+          }
+        }else{
+          stopLabPlay();
+        }
+      });
+    },{threshold:0.15});
+    labObs.observe(labSec);
+  }
+}
+
+/* ---------- Contact form: mailto draft (no fake send) ---------- */
+var form=document.getElementById("contactForm"),formError=document.getElementById("formError"),
+    formStatus=document.getElementById("formStatus"),reopenDraft=document.getElementById("reopenDraft");
+function setInvalid(id,invalid){
+  document.getElementById(id).classList.toggle("invalid",invalid);
+}
+form.addEventListener("submit",function(e){
+  e.preventDefault();
+  formError.classList.remove("show");formError.textContent="";formStatus.classList.remove("show");
+  var name=document.getElementById("cfName").value.trim(),
+      email=document.getElementById("cfEmail").value.trim(),
+      type=document.getElementById("cfType").value,
+      message=document.getElementById("cfMessage").value.trim(),
+      honey=document.getElementById("cfCompany").value.trim();
+  if(honey){
+    formError.textContent="This message could not be prepared. Please email directly instead.";formError.classList.add("show");return;
+  }
+  var badName=!name, badEmail=!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email),
+      badType=!type, badMsg=message.length<20;
+  setInvalid("f-name",badName);setInvalid("f-email",badEmail);
+  setInvalid("f-type",badType);setInvalid("f-message",badMsg);
+  if(badName||badEmail||badType||badMsg){
+    var msgs=[];
+    if(badName)msgs.push("your name");if(badEmail)msgs.push("a valid email address");
+    if(badType)msgs.push("a project type");if(badMsg)msgs.push("a message of at least 20 characters");
+    formError.textContent="Please add "+msgs.join(", ")+" before preparing the draft.";
+    formError.classList.add("show");
+    var firstBad=document.querySelector(".field.invalid input,.field.invalid select,.field.invalid textarea");
+    if(firstBad)firstBad.focus();
+    return;
+  }
+  var subject="Project enquiry — "+type+" — "+name;
+  var body="Hi Krrish,\n\nName: "+name+"\nEmail: "+email+"\nProject type: "+type+"\n\nMessage:\n"+message+"\n\n— Sent via the portfolio contact form (draft prepared in my email app).";
+  var mailto="mailto:"+EMAIL+"?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);
+  reopenDraft.href=mailto;
+  /* Genuine preparing state: the draft is being assembled, then the
+     visitor's own email app opens. Nothing is claimed as sent. */
+  var submitBtn=document.getElementById("contactSubmit");
+  submitBtn.disabled=true;
+  var prevLabel=submitBtn.textContent;
+  submitBtn.textContent="Preparing draft\u2026";
+  setTimeout(function(){
+    /* Open the draft via the mailto anchor (no page-URL handling involved). */
+    reopenDraft.click();
+    formStatus.classList.add("show");
+    document.getElementById("copyDone").textContent="";
+    submitBtn.disabled=false;
+    submitBtn.textContent=prevLabel;
+  },450);
+});
+document.getElementById("copyEmailBtn").addEventListener("click",function(){
+  var done=document.getElementById("copyDone");
+  function ok(){done.textContent="Copied.";setTimeout(function(){done.textContent="";},2500);}
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(EMAIL).then(ok,function(){done.textContent=EMAIL;});
+  }else{done.textContent=EMAIL;}
+});
+["cfName","cfEmail","cfType","cfMessage"].forEach(function(id){
+  document.getElementById(id).addEventListener("input",function(){
+    var map={cfName:"f-name",cfEmail:"f-email",cfType:"f-type",cfMessage:"f-message"};
+    setInvalid(map[id],false);
+  });
+});
+})();
+</script>
+</body>
+</html>
