@@ -61,6 +61,10 @@ header.site{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.92);ba
 .btn-sm{padding:9px 14px;font-size:13.5px}
 .btn-ghost{background:transparent;color:#d1fae5;border-color:rgba(255,255,255,.25)}
 .btn-ghost:hover{border-color:#fff;color:#fff}
+.btn-whatsapp{background:#25d366;color:#fff;box-shadow:0 6px 18px rgba(37,211,102,.30)}
+.btn-whatsapp:hover{background:#1eb856;color:#fff}
+.btn-whatsapp svg{width:18px;height:18px;flex:0 0 auto}
+.btn-whatsapp:active{transform:translateY(1px) scale(.985)}
 .nav-cta{margin-left:8px}
 .menu-btn{display:none;background:#fff;border:1px solid var(--line);border-radius:10px;width:44px;height:44px;align-items:center;justify-content:center}
 .menu-btn svg{width:22px;height:22px}
@@ -324,6 +328,23 @@ section{padding:92px 0}
 .form-status h4{font-size:15.5px;color:var(--forest);margin-bottom:7px}
 .form-status p{color:var(--muted);font-size:14px}
 .form-status .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:13px}
+
+/* ---------- WhatsApp ---------- */
+.wa-float{position:fixed;right:20px;bottom:20px;z-index:90;display:inline-flex;align-items:center;gap:9px;background:#25d366;color:#fff;text-decoration:none;font-weight:700;font-size:14.5px;padding:13px 18px;border-radius:999px;box-shadow:0 10px 28px rgba(37,211,102,.38),0 4px 12px rgba(17,24,39,.14);transition:transform .22s var(--ease),background .2s,box-shadow .2s}
+.wa-float:hover{background:#1eb856;color:#fff;transform:translateY(-2px)}
+.wa-float svg{width:22px;height:22px;flex:0 0 auto}
+.wa-float::before{content:"";position:absolute;inset:-4px;border-radius:inherit;border:2px solid rgba(37,211,102,.5);animation:waPulse 2.4s ease-out infinite;pointer-events:none}
+@keyframes waPulse{0%{opacity:.8;transform:scale(1)}70%{opacity:0;transform:scale(1.12)}100%{opacity:0;transform:scale(1.12)}}
+.contact-lines .ic.wa{background:#dcfce7;color:#15803d}
+.wa-divider{display:flex;align-items:center;gap:12px;margin:20px 0 12px;color:var(--faint);font-size:13px;font-weight:600;text-align:center}
+.wa-divider::before,.wa-divider::after{content:"";flex:1;height:1px;background:var(--line)}
+.wa-alt .btn{width:100%}
+@media (max-width:640px){
+  .wa-float{right:14px;bottom:14px;padding:12px 15px;font-size:13.5px}
+}
+@media (prefers-reduced-motion:reduce){
+  .wa-float::before{animation:none}
+}
 
 /* ---------- Footer ---------- */
 footer{border-top:1px solid var(--line);padding:44px 0 36px;background:var(--surface)}
@@ -611,6 +632,7 @@ header.site.scrolled{box-shadow:0 6px 24px rgba(17,24,39,.08);background:rgba(25
       <div class="hero-ctas hero-anim" style="--d:.62s">
         <a class="btn btn-primary btn-shine magnetic" href="#projects">Explore My Work</a>
         <a class="btn btn-outline magnetic" href="#contact">Contact Me</a>
+        <a class="btn btn-whatsapp magnetic" href="https://wa.me/923130017020?text=Hi%20Krrish%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" aria-label="Message Krrish Kishore on WhatsApp at 0313 0017020"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.2-.8l.4-.5c.1-.2.1-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.6 1.1 2.8c.1.2 1.9 2.9 4.5 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.4-.3Z"/></svg>WhatsApp Me</a>
       </div>
       <div class="hero-meta hero-anim" style="--d:.74s">
         <span class="avail"><i aria-hidden="true"></i>Availability — enquire for current capacity</span>
@@ -729,6 +751,7 @@ header.site.scrolled{box-shadow:0 6px 24px rgba(17,24,39,.08);background:rgba(25
           <div><dt>Core stack</dt><dd>n8n &middot; OpenAI &middot; Supabase</dd></div>
           <div><dt>Focus</dt><dd>AI agents &amp; workflows</dd></div>
           <div><dt>Email</dt><dd class="email"><a href="mailto:krrishkishore195@gmail.com">krrishkishore195@gmail.com</a></dd></div>
+          <div><dt>WhatsApp</dt><dd><a href="https://wa.me/923130017020?text=Hi%20Krrish%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener">0313 0017020</a></dd></div>
         </dl>
       </aside>
     </div>
@@ -1069,6 +1092,10 @@ header.site.scrolled{box-shadow:0 6px 24px rgba(17,24,39,.08);background:rgba(25
           <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
           <span><small>Email</small><strong>krrishkishore195@gmail.com</strong></span>
         </a>
+        <a href="https://wa.me/923130017020?text=Hi%20Krrish%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" aria-label="Message Krrish Kishore on WhatsApp at 0313 0017020">
+          <span class="ic wa"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.2-.8l.4-.5c.1-.2.1-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.6 1.1 2.8c.1.2 1.9 2.9 4.5 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.4-.3Z"/></svg></span>
+          <span><small>WhatsApp — chat directly</small><strong>0313 0017020</strong></span>
+        </a>
         <div>
           <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
           <span><small>Location</small><strong>Karachi, Pakistan</strong></span>
@@ -1130,11 +1157,16 @@ header.site.scrolled{box-shadow:0 6px 24px rgba(17,24,39,.08);background:rgba(25
         <button class="btn btn-primary" id="contactSubmit" type="submit" style="width:100%">Prepare email draft</button>
         <p style="font-size:13px;color:var(--faint);margin-top:12px;text-align:center">Your email app will open with the message pre-filled. You review and send it.</p>
       </form>
+      <div class="wa-alt">
+        <div class="wa-divider">or message directly</div>
+        <a class="btn btn-whatsapp" href="https://wa.me/923130017020?text=Hi%20Krrish%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" aria-label="Message Krrish Kishore on WhatsApp at 0313 0017020"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.2-.8l.4-.5c.1-.2.1-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.6 1.1 2.8c.1.2 1.9 2.9 4.5 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.4-.3Z"/></svg>Message on WhatsApp — 0313 0017020</a>
+      </div>
       <div class="form-status" id="formStatus" role="status">
         <h4>Email draft ready</h4>
         <p>Your email app should have opened with a draft to <strong>krrishkishore195@gmail.com</strong>. Nothing was sent from this page — sending happens in your email app. If it didn&rsquo;t open, use the buttons below.</p>
         <div class="row">
           <a class="btn btn-dark btn-sm" id="reopenDraft" href="mailto:krrishkishore195@gmail.com">Open email app</a>
+          <a class="btn btn-whatsapp btn-sm" href="https://wa.me/923130017020?text=Hi%20Krrish%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener">Message on WhatsApp</a>
           <button class="btn btn-outline btn-sm" id="copyEmailBtn" type="button">Copy email address</button>
           <span id="copyDone" style="font-size:13px;font-weight:700;color:var(--forest);align-self:center"></span>
         </div>
@@ -1164,10 +1196,13 @@ header.site.scrolled{box-shadow:0 6px 24px rgba(17,24,39,.08);background:rgba(25
     <div class="foot-bottom">
       <span>&copy; <span id="year">2026</span> Krrish Kishore. All rights reserved.</span>
       <a href="mailto:krrishkishore195@gmail.com">krrishkishore195@gmail.com</a>
+      <a href="https://wa.me/923130017020?text=Hi%20Krrish%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener">WhatsApp: 0313 0017020</a>
       <span>Karachi, Pakistan</span>
     </div>
   </div>
 </footer>
+
+<a class="wa-float" href="https://wa.me/923130017020?text=Hi%20Krrish%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" aria-label="Chat with Krrish Kishore on WhatsApp at 0313 0017020"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.2-.8l.4-.5c.1-.2.1-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.6 1.1 2.8c.1.2 1.9 2.9 4.5 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.4-.3Z"/></svg><span>Chat on WhatsApp</span></a>
 
 <!-- ============ CASE STUDY MODAL ============ -->
 <div class="modal-backdrop" id="modalBackdrop">
